@@ -1,0 +1,130 @@
+{
+  "formatVersion": 1,
+  "name": "用户备份",
+  "createdAt": "2026-10-25T05:09:54+00:00",
+  "snapshotOf": "DSH desktop profile",
+  "dsh": {
+    "appVersion": "0.2.1-rc.3",
+    "profile": "desktop",
+    "platform": "darwin-arm64",
+    "node": "24.21.0"
+  },
+  "baseBundles": [
+    "@deepseek-ai/dsh-base",
+    "@deepseek-ai/dsh-web-app"
+  ],
+  "bundles": [
+    "dsh-whale-widget",
+    "dsh-orb",
+    "dsh-univer-office",
+    "dsh-session-cost",
+    "dsh-tool-token-optimizer",
+    "dsh-exec-optimizer",
+    "dsh-computer-use-turbo",
+    "dsh-optimizer",
+    "dsh-free-image",
+    "dsh-free-image-max",
+    "dsh-univer-turbo"
+  ],
+  "plugins": [
+    {
+      "name": "dsh-whale-widget",
+      "version": "0.4.2",
+      "source": "npm",
+      "spec": "dsh-whale-widget@0.4.2",
+      "purpose": "DeepSeek 余额/用量小鲸鱼挂件，右下角可点开"
+    },
+    {
+      "name": "dsh-orb",
+      "version": "0.1.9",
+      "source": "npm",
+      "spec": "dsh-orb@0.1.9",
+      "purpose": "桌面悬浮球 + Computer Use 预设 + 后台 code_agent"
+    },
+    {
+      "name": "dsh-univer-office",
+      "version": "0.3.7",
+      "source": "npm",
+      "spec": "dsh-univer-office@0.3.7",
+      "purpose": "Univer 文档/表格/幻灯片工具与实时预览"
+    },
+    {
+      "name": "dsh-session-cost",
+      "version": "1.0.1",
+      "source": "vendored",
+      "dir": "plugins/dsh-session-cost",
+      "purpose": "本轮/本会话花费、缓存命中与峰谷价"
+    },
+    {
+      "name": "dsh-tool-token-optimizer",
+      "version": "1.0.14",
+      "source": "vendored",
+      "dir": "plugins/dsh-tool-token-optimizer",
+      "purpose": "工具结果落盘前压缩（1600 字符内联预算）"
+    },
+    {
+      "name": "dsh-exec-optimizer",
+      "version": "1.0.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-exec-optimizer",
+      "purpose": "执行优化：并行/重试/截断/按需加载/防复读"
+    },
+    {
+      "name": "dsh-computer-use-turbo",
+      "version": "1.0.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-computer-use-turbo",
+      "purpose": "Computer Use 会话加速：机制截图去重、压缩策略段"
+    },
+    {
+      "name": "dsh-optimizer",
+      "version": "4.8.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-optimizer",
+      "purpose": "推理等级 auto、精简化输出、花费预警面板"
+    },
+    {
+      "name": "dsh-free-image",
+      "version": "1.1.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-free-image",
+      "purpose": "image_generate 工具：公网 Pollinations / 本机 SD"
+    },
+    {
+      "name": "dsh-free-image-max",
+      "version": "1.0.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-free-image-max",
+      "purpose": "image_generate 优化层：公网优先、提示词扩写、交付校验"
+    },
+    {
+      "name": "dsh-univer-turbo",
+      "version": "1.0.9",
+      "source": "vendored",
+      "dir": "plugins/dsh-univer-turbo",
+      "purpose": "Univer 调用提速降耗：单门面工具 + 结果压缩 + 批量"
+    }
+  ],
+  "settings": [
+    {
+      "file": "settings/optimizer.json",
+      "location": "dsh-home",
+      "target": "optimizer.json"
+    },
+    {
+      "file": "settings/exec-optimizer.json",
+      "location": "dsh-home",
+      "target": "exec-optimizer.json"
+    },
+    {
+      "file": "settings/orb-avatar.json",
+      "location": "profile",
+      "target": "orb-avatar.json"
+    }
+  ],
+  "payload": {
+    "archive": "plugins.tar.gz",
+    "sha256": "764351cc991e6c33ad3b9369cc0b037fc35444ea4abfa782ad94867c8b54e5c0",
+    "files": 188
+  }
+}
