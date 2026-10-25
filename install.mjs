@@ -63,6 +63,11 @@ if (!existsSync(pluginsRoot)) {
 /** 把清单里的插件翻译成 pnpm 安装参数。 */
 const specs = backup.plugins.map((plugin) => {
   if (plugin.source === 'npm') return `${plugin.name}@${plugin.version}`
+  if (plugin.tarball) {
+    const file = join(HERE, plugin.tarball)
+    if (!existsSync(file) && !dryRun) fail(`清单里的 ${plugin.name} 需要 ${plugin.tarball}，但该文件不存在。`)
+    return `file:${file}`
+  }
   const dir = join(HERE, plugin.dir)
   if (!existsSync(dir) && !dryRun) fail(`清单里的 ${plugin.name} 指向 ${plugin.dir}，但该目录不存在。`)
   return `link:${dir}`
@@ -115,6 +120,7 @@ function ensureBundles() {
 function restoreSettingsSnapshot() {
   const restored = []
   for (const entry of backup.settings ?? []) {
+    if (entry.kind === 'compatibility') continue
     const source = join(HERE, entry.file)
     const base = entry.location === 'profile' ? profileDir : dshHome
     const target = join(base, entry.target)
@@ -126,6 +132,58 @@ function restoreSettingsSnapshot() {
   return restored
 }
 
+/** 合并插件版本豁免（compatibility.json）：只增不覆盖。 */
+function mergeCompatibility() {
+  const source = join(HERE, 'settings', 'compatibility.json')
+  const target = join(profileDir, 'compatibility.json')
+  if (!existsSync(source)) return false
+  const incoming = JSON.parse(readFileSync(source, 'utf8'))
+  const current = existsSync(target) ? JSON.parse(readFileSync(target, 'utf8')) || {} : {}
+  let changed = false
+  for (const [plugin, versions] of Object.entries(incoming)) {
+    if (!Array.isArray(versions)) continue
+    const existing = Array.isArray(current[plugin]) ? current[plugin] : []
+    const merged = [...new Set([...existing, ...versions])]
+    if (JSON.stringify(merged) !== JSON.stringify(existing)) {
+      current[plugin] = merged
+      changed = true
+    }
+  }
+  if (changed) writeFileSync(target, `${JSON.stringify(current, null, 2)}\n`)
+  return changed
+}
+
+/** 把 patch/plugins.yml 里还没有的插件 override 追加到 profile 补丁末尾。 */
+function appendPatchOverrides() {
+  const source = join(HERE, 'patch', 'plugins.yml')
+  const target = join(profileDir, 'cordis.patch.yml')
+  if (!existsSync(source)) return []
+  const blocks = []
+  let block = []
+  for (const line of readFileSync(source, 'utf8').split('\n')) {
+    if (/^- id: /.test(line)) {
+      if (block.length > 0) blocks.push(block.join('\n'))
+      block = [line]
+    } else if (block.length > 0) {
+      block.push(line)
+    }
+  }
+  if (block.length > 0) blocks.push(block.join('\n'))
+
+  const existing = existsSync(target)
+    ? readFileSync(target, 'utf8')
+    : '# Your patch layer for this dsh profile, applied after every bundle layer:\n# a top-level YAML array of loader patch entries.\n'
+  // 空 profile 的补丁层可能是 `[]`；追加条目之前先把它去掉。
+  const targetText = /^\s*\[\]\s*$/m.test(existing) ? existing.replace(/^\s*\[\]\s*$/m, '') : existing
+  const present = new Set([...targetText.matchAll(/^- id:\s*(\S+)/gm)].map((match) => match[1]))
+  const missing = blocks
+    .filter((text) => !present.has(/^- id:\s*(\S+)/m.exec(text)[1]))
+    .map((text) => text.trimEnd())
+  if (missing.length === 0) return []
+  writeFileSync(target, `${targetText.trimEnd()}\n\n${missing.join('\n\n')}\n`)
+  return missing.map((text) => /^- id:\s*(\S+)/m.exec(text)[1])
+}
+
 console.log(`用户备份 · ${backup.plugins.length} 个插件 · 快照 ${backup.createdAt}`)
 console.log(`profile: ${profileDir}`)
 console.log(`安装器: ${installCommand[0]}`)
@@ -133,6 +191,9 @@ console.log('')
 
 const snapshot = dryRun ? undefined : snapshotProfile()
 if (snapshot) console.log(`· 已备份现有 profile 清单到 ${snapshot}`)
+
+// 版本豁免必须在安装命令之前写好：dsh plugin add 会先做兼容性校验。
+if (!dryRun && mergeCompatibility()) console.log('· 已合并插件版本豁免（compatibility.json）')
 
 console.log(`· 安装 ${specs.length} 个插件${dryRun ? '（演练）' : ''}`)
 if (dryRun) {
@@ -163,6 +224,10 @@ console.log(bundlesChanged ? '· 已更新 dsh.profile.bundles' : '· dsh.profil
 
 const settings = restoreSettings ? restoreSettingsSnapshot() : []
 if (settings.length > 0) console.log(`· 已补回插件设置：${settings.join(', ')}`)
+
+
+const overrides = appendPatchOverrides()
+if (overrides.length > 0) console.log(`· 已追加插件 override：${overrides.join(', ')}`)
 
 console.log('')
 console.log('✓ 安装完成。请完全退出并重新打开 DeepSeek Harness 使插件生效。')

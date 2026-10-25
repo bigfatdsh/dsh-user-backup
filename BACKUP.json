@@ -1,7 +1,7 @@
 {
-  "formatVersion": 1,
+  "formatVersion": 2,
   "name": "用户备份",
-  "createdAt": "2026-10-25T05:09:54+00:00",
+  "createdAt": "2026-10-25T07:10:24Z",
   "snapshotOf": "DSH desktop profile",
   "dsh": {
     "appVersion": "0.2.1-rc.3",
@@ -24,7 +24,13 @@
     "dsh-optimizer",
     "dsh-free-image",
     "dsh-free-image-max",
-    "dsh-univer-turbo"
+    "dsh-univer-turbo",
+    "dsh-oil-ui",
+    "dsh-wechat-media",
+    "@deepseek-ai/dsh-experimental-auto-review",
+    "@deepseek-ai/dsh-experimental-session-search",
+    "@deepseek-ai/dsh-experimental-plugin-market-bundle",
+    "dsh-wechat-media-turbo"
   ],
   "plugins": [
     {
@@ -74,7 +80,7 @@
       "version": "1.0.0",
       "source": "vendored",
       "dir": "plugins/dsh-computer-use-turbo",
-      "purpose": "Computer Use 会话加速：机制截图去重、压缩策略段"
+      "purpose": "Computer Use 会话加速：截图去重、压缩策略段"
     },
     {
       "name": "dsh-optimizer",
@@ -88,7 +94,7 @@
       "version": "1.1.0",
       "source": "vendored",
       "dir": "plugins/dsh-free-image",
-      "purpose": "image_generate 工具：公网 Pollinations / 本机 SD"
+      "purpose": "image_generate 工具（公网 Pollinations / 本机 SD）"
     },
     {
       "name": "dsh-free-image-max",
@@ -103,6 +109,28 @@
       "source": "vendored",
       "dir": "plugins/dsh-univer-turbo",
       "purpose": "Univer 调用提速降耗：单门面工具 + 结果压缩 + 批量"
+    },
+    {
+      "name": "dsh-oil-ui",
+      "version": "0.4.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-oil-ui",
+      "purpose": "Oil UI 设计技能与工具：风格探索、截图、评审（需版本豁免）",
+      "tarball": "plugins/dsh-oil-ui-0.4.0.tgz"
+    },
+    {
+      "name": "dsh-wechat-media",
+      "version": "1.6.3",
+      "source": "vendored",
+      "dir": "plugins/dsh-wechat-media",
+      "purpose": "微信桥：iLink 扫码登录、收发文本/文件/语音，每个联系人一个会话"
+    },
+    {
+      "name": "dsh-wechat-media-turbo",
+      "version": "0.1.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-wechat-media-turbo",
+      "purpose": "微信精简 preset（鲸鱼娘·大肥鱼）：精简工具集与短回复"
     }
   ],
   "settings": [
@@ -120,11 +148,21 @@
       "file": "settings/orb-avatar.json",
       "location": "profile",
       "target": "orb-avatar.json"
+    },
+    {
+      "file": "settings/compatibility.json",
+      "location": "profile",
+      "target": "compatibility.json",
+      "kind": "compatibility"
     }
   ],
+  "patch": {
+    "file": "patch/plugins.yml",
+    "mode": "append-missing"
+  },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "cb0692caecf33add071003a2c22ada0ceb5a2fb57c9139a793e863dbe259a803",
-    "files": 188
+    "sha256": "11fc5272139c41a743184f980d6eaf885f1849896327f8f434e2a552f435d77e",
+    "files": 530
   }
 }

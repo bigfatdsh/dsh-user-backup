@@ -1,0 +1,6 @@
+# 用户层里与插件有关的 overrides（不是整份 profile 补丁）。
+# 安装器只在目标 cordis.patch.yml 里没有同名 - id 时把对应块追加到末尾。
+- id: univer
+  name: dsh-univer-office
+  config:
+    autoOpenLivePreview: false
