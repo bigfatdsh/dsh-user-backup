@@ -36,7 +36,7 @@ node install.mjs
 
 然后**完全退出并重启 DeepSeek Harness**。
 
-- 仓库是 private：clone 前需要本机已登录自己的 GitHub 账号。本机 `github.com` 直连不通时，用 API 下载：`GET https://api.github.com/repos/bigfatdsh/dsh-user-backup/tarball`（需要 token），或让 DSH 代理代取。
+- 仓库是**公开**的，不需要登录即可浏览；`git clone` 或直接下 ZIP 都行。本机 `github.com` 直连不通时，用 API 下载：`GET https://api.github.com/repos/bigfatdsh/dsh-user-backup/tarball`（公开仓库不需要 token），或走 codeload。
 - 安装脚本要写 `~/.dsh`。**不要在本仓库里用 DSH 的沙箱 shell 跑**（沙箱只允许写工作区，会报 EPERM）；请在「终端」里跑，或让 DSH 以完整文件权限执行。
 - 只想看会执行什么、不改文件：`node install.mjs --dry-run`。
 
@@ -62,7 +62,7 @@ node install.mjs
 
 用户说「安装 GitHub 上的用户备份」时：
 
-1. 仓库 `bigfatdsh/dsh-user-backup`（private）。本机 `github.com` 不可直连，`api.github.com` 可用；用 token 走 API 取 `tarball`，或用 codeload。
+1. 仓库 `bigfatdsh/dsh-user-backup`（公开）。本机 `github.com` 不可直连，`api.github.com` 可用；走 API 取 `tarball`（公开仓库无需 token），或用 codeload。
 2. 解包后运行 `node install.mjs`。安装会写 `~/.dsh`，必须用完整文件权限（`danger-full-access` 或在系统终端执行）。
 3. 装完必须重启 DSH（profile 只在启动时装载）。
 4. 重启后按上面「怎么确认装好了」核对，插件缺一个都不算完成。

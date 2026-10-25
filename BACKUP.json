@@ -124,7 +124,7 @@
   ],
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "764351cc991e6c33ad3b9369cc0b037fc35444ea4abfa782ad94867c8b54e5c0",
+    "sha256": "cb0692caecf33add071003a2c22ada0ceb5a2fb57c9139a793e863dbe259a803",
     "files": 188
   }
 }
