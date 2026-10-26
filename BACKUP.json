@@ -1,7 +1,7 @@
 {
   "formatVersion": 2,
   "name": "用户备份",
-  "createdAt": "2026-10-26T11:55:52Z",
+  "createdAt": "2026-10-26T13:07:26Z",
   "snapshotOf": "DSH desktop profile",
   "dsh": {
     "appVersion": "0.2.1-rc.3",
@@ -196,6 +196,6 @@
     "sha256": "49f63d0031361756bde783af62081ea274ac2386c83940fb48302e4d2394a4f8",
     "files": 452
   },
-  "updatedAt": "2026-10-26T11:55:52Z",
-  "updateNote": "2026-10-26 19:50 同步 whale-lean 预设：表情包常用化、动图 mp4、发文件必补文字、每轮报花费"
+  "updatedAt": "2026-10-26T13:07:26Z",
+  "updateNote": "2026-10-26 21:10 同步：whale-lean 预设加「说话的劲儿」——像人说话、俏皮傲娇、端着抱着 token 的底气"
 }
