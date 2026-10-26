@@ -1,7 +1,7 @@
 {
   "formatVersion": 2,
   "name": "用户备份",
-  "createdAt": "2026-10-25T07:10:24Z",
+  "createdAt": "2026-10-26T10:47:06Z",
   "snapshotOf": "DSH desktop profile",
   "dsh": {
     "appVersion": "0.2.1-rc.3",
@@ -22,15 +22,19 @@
     "dsh-exec-optimizer",
     "dsh-computer-use-turbo",
     "dsh-optimizer",
-    "dsh-free-image",
-    "dsh-free-image-max",
     "dsh-univer-turbo",
     "dsh-oil-ui",
     "dsh-wechat-media",
     "@deepseek-ai/dsh-experimental-auto-review",
     "@deepseek-ai/dsh-experimental-session-search",
     "@deepseek-ai/dsh-experimental-plugin-market-bundle",
-    "dsh-wechat-media-turbo"
+    "dsh-wechat-media-turbo",
+    "dsh-sd-bridge-mac",
+    "dsh-sd-turbo",
+    "dsh-bili-scroll",
+    "dsh-plugin-fast",
+    "@alanzhao/dsh-memory-lite",
+    "dsh-yishi-whale"
   ],
   "plugins": [
     {
@@ -90,20 +94,6 @@
       "purpose": "推理等级 auto、精简化输出、花费预警面板"
     },
     {
-      "name": "dsh-free-image",
-      "version": "1.1.0",
-      "source": "vendored",
-      "dir": "plugins/dsh-free-image",
-      "purpose": "image_generate 工具（公网 Pollinations / 本机 SD）"
-    },
-    {
-      "name": "dsh-free-image-max",
-      "version": "1.0.0",
-      "source": "vendored",
-      "dir": "plugins/dsh-free-image-max",
-      "purpose": "image_generate 优化层：公网优先、提示词扩写、交付校验"
-    },
-    {
       "name": "dsh-univer-turbo",
       "version": "1.0.9",
       "source": "vendored",
@@ -115,8 +105,7 @@
       "version": "0.4.0",
       "source": "vendored",
       "dir": "plugins/dsh-oil-ui",
-      "purpose": "Oil UI 设计技能与工具：风格探索、截图、评审（需版本豁免）",
-      "tarball": "plugins/dsh-oil-ui-0.4.0.tgz"
+      "purpose": "Oil UI 设计技能与工具：风格探索、截图、评审（需版本豁免）"
     },
     {
       "name": "dsh-wechat-media",
@@ -131,6 +120,48 @@
       "source": "vendored",
       "dir": "plugins/dsh-wechat-media-turbo",
       "purpose": "微信精简 preset（鲸鱼娘·大肥鱼）：精简工具集与短回复"
+    },
+    {
+      "name": "dsh-sd-bridge-mac",
+      "version": "1.0.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-sd-bridge-mac",
+      "purpose": "SD 生图桥（macOS 原生）：文生图/图生图/蒙版重绘/模型清单/服务管理"
+    },
+    {
+      "name": "dsh-sd-turbo",
+      "version": "1.0.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-sd-turbo",
+      "purpose": "SD 加速层：结果缓存、并发合并、串行队列、自动档位（8 步/LCM 4 步）、重试"
+    },
+    {
+      "name": "dsh-bili-scroll",
+      "version": "2.2.0",
+      "source": "npm",
+      "spec": "dsh-bili-scroll@2.2.0",
+      "purpose": "每天替你刷一轮 B 站：读字幕挑值得的、写日报，值得的 @ 你"
+    },
+    {
+      "name": "dsh-plugin-fast",
+      "version": "1.0.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-plugin-fast",
+      "purpose": "装插件的快车道：一次调用完成安装、登记与体检"
+    },
+    {
+      "name": "@alanzhao/dsh-memory-lite",
+      "version": "0.4.1-adapted.1",
+      "source": "vendored",
+      "dir": "plugins/dsh-memory-lite",
+      "purpose": "轻量记忆：Markdown 文件记忆 + 目录索引（L0 上限 800 token）"
+    },
+    {
+      "name": "dsh-yishi-whale",
+      "version": "0.4.26-whale.1",
+      "source": "vendored",
+      "dir": "plugins/dsh-yishi-whale",
+      "purpose": "忆时适配版：跨会话增量记忆，只挂进 whale-lean 预设"
     }
   ],
   "settings": [
@@ -162,7 +193,7 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "11fc5272139c41a743184f980d6eaf885f1849896327f8f434e2a552f435d77e",
-    "files": 530
+    "sha256": "49f63d0031361756bde783af62081ea274ac2386c83940fb48302e4d2394a4f8",
+    "files": 452
   }
 }

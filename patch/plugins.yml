@@ -4,3 +4,27 @@
   name: dsh-univer-office
   config:
     autoOpenLivePreview: false
+# memory-lite: extraction is structured JSON work, so it runs without reasoning;
+# the L0 catalog is capped tighter than the 2000-token upstream default.
+- id: memory-lite
+  name: "@alanzhao/dsh-memory-lite"
+  config:
+    index:
+      maxTokens: 800
+    extraction:
+      llm:
+        reasoningEffort: off
+- id: bili-scroll
+  name: dsh-bili-scroll
+  config:
+    enabled: true
+    peakValley: true
+    autoComment: true
+    dmMode: off
+    transcribe: true
+    mentionName: Tuke-style
+    keywords:
+      - 大肥鱼，deepseek，美女
+    personaPrompt: ""
+    replyToComments: true
+    perDay: 10
