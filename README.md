@@ -2,10 +2,10 @@
 
 DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**18 个第三方插件 + 3 个内置实验性插件 + 插件相关的 profile override**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
 
-- 快照时间：2026-10-26 18:47:06（UTC+8）
+- 快照时间：2026-10-26 19:50（UTC+8）
 - DSH 版本：0.2.1-rc.3 · macOS arm64
 - 备份时状态：18 个插件均由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；3 个内置实验性插件已开启
-- 本版新增：dsh-bili-scroll、dsh-plugin-fast、@alanzhao/dsh-memory-lite、dsh-yishi-whale（上一版为 2026-10-26 12:56 的 14 个插件）
+- 本版变更：whale-lean 预设更新（表情包常用化、动图走 clips/*.mp4、发文件必配 wechat_send_text、每条消息末尾报本轮花费）
 
 ## 包含的插件
 
