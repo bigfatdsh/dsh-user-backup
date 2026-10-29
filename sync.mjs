@@ -21,7 +21,7 @@
  */
 
 import { createHash } from 'node:crypto'
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync, statSync, writeFileSync } from 'node:fs'
+import { cpSync, existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync, statSync, writeFileSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -86,12 +86,23 @@ function packageVersion(dir) {
   }
 }
 
-/** 递归复制，跳过依赖/缓存。 */
+/**
+ * 递归复制，跳过依赖/缓存。
+ *
+ * 用 lstat 判类型并跳过符号链接：插件目录里若出现指向自身的软链（安装器有时会造），
+ * stat 会把它当目录一路跟进，直到路径超长——2026-10-29 备份里 dsh-wpac 因此涨到 363 个文件。
+ */
 function copyTree(from, to) {
   let files = 0
+  let skippedLinks = 0
   const walk = (src, dst) => {
     if (!existsSync(src)) return
-    if (statSync(src).isDirectory()) {
+    const stat = lstatSync(src)
+    if (stat.isSymbolicLink()) {
+      skippedLinks += 1
+      return
+    }
+    if (stat.isDirectory()) {
       if (skipName(src.slice(src.lastIndexOf('/') + 1))) return
       mkdirSync(dst, { recursive: true })
       for (const name of readdirSync(src)) walk(join(src, name), join(dst, name))
@@ -103,6 +114,7 @@ function copyTree(from, to) {
     files += 1
   }
   walk(from, to)
+  if (skippedLinks > 0) console.log(`  ! 跳过 ${skippedLinks} 个符号链接（可能是安装器留下的自指软链）`)
   return files
 }
 
