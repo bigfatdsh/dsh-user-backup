@@ -25,7 +25,7 @@
   config:
     provider: deepseek-account
     model: deepseek-flash
-    reasoningEffort: max
+    reasoningEffort: high
 - id: univer
   name: dsh-univer-office
   config:
