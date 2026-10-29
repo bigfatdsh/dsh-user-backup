@@ -56,6 +56,11 @@ const EXTRA = [
     source: 'vendored',
     purpose: '记忆库：微信-QQ-房间共享、随时间自然遗忘、聊天进她的账本、历史回填',
   },
+  {
+    name: 'dsh-wpac',
+    source: 'vendored',
+    purpose: 'WPAC agent 预设：W/P/A/C 四要素先补全再交付（姜涛）',
+  },
 ]
 
 function readJson(file) {
