@@ -219,9 +219,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "4e7f50a228fb74713064d47740ea45d9b7cbe5d476099afb45f14f02776425ae",
+    "sha256": "ba343a7c6e823f81f4f7818058ac8c2b25c1e6f1edc42c225eb3445f469c2aab",
     "files": 618
   },
-  "updatedAt": "2026-10-29T11:05:33Z",
+  "updatedAt": "2026-10-29T11:06:19Z",
   "updateNote": "2026-10-28 12:42 同步：tool-token-optimizer 改为 toolBudgets.bash=1000（5689 条真实结果回放，省量 21.7%→31.6%）；profile patch 与插件源码同步；清理 4 个未挂载的孤儿插件软链（bundle 列表不变）"
 }
