@@ -1,17 +1,20 @@
 {
   "formatVersion": 2,
   "name": "用户备份",
-  "createdAt": "2026-10-26T13:15:14Z",
+  "createdAt": "2026-10-29T10:46:50Z",
   "snapshotOf": "DSH desktop profile",
   "dsh": {
     "appVersion": "0.2.1-rc.3",
     "profile": "desktop",
     "platform": "darwin-arm64",
-    "node": "24.21.0"
+    "node": "v24.16.0"
   },
   "baseBundles": [
     "@deepseek-ai/dsh-base",
-    "@deepseek-ai/dsh-web-app"
+    "@deepseek-ai/dsh-web-app",
+    "@deepseek-ai/dsh-experimental-auto-review",
+    "@deepseek-ai/dsh-experimental-session-search",
+    "@deepseek-ai/dsh-experimental-plugin-market-bundle"
   ],
   "bundles": [
     "dsh-whale-widget",
@@ -25,16 +28,17 @@
     "dsh-univer-turbo",
     "dsh-oil-ui",
     "dsh-wechat-media",
-    "@deepseek-ai/dsh-experimental-auto-review",
-    "@deepseek-ai/dsh-experimental-session-search",
-    "@deepseek-ai/dsh-experimental-plugin-market-bundle",
     "dsh-wechat-media-turbo",
     "dsh-sd-bridge-mac",
     "dsh-sd-turbo",
     "dsh-bili-scroll",
     "dsh-plugin-fast",
+    "dsh-yishi-whale",
+    "dshmarket",
+    "dsh-pet",
     "@alanzhao/dsh-memory-lite",
-    "dsh-yishi-whale"
+    "dsh-fish",
+    "dsh-fish-memory"
   ],
   "plugins": [
     {
@@ -162,6 +166,20 @@
       "source": "vendored",
       "dir": "plugins/dsh-yishi-whale",
       "purpose": "忆时适配版：跨会话增量记忆，只挂进 whale-lean 预设"
+    },
+    {
+      "name": "dsh-fish",
+      "source": "vendored",
+      "purpose": "大肥鱼本体：身份段 / 唤醒与成长账本 / B站 / 桌面与记忆工具（含本地补丁）",
+      "version": "0.6.1",
+      "dir": "plugins/dsh-fish"
+    },
+    {
+      "name": "dsh-fish-memory",
+      "source": "vendored",
+      "purpose": "记忆库：微信-QQ-房间共享、随时间自然遗忘、聊天进她的账本、历史回填",
+      "version": "0.1.0",
+      "dir": "plugins/dsh-fish-memory"
     }
   ],
   "settings": [
@@ -193,9 +211,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "49f63d0031361756bde783af62081ea274ac2386c83940fb48302e4d2394a4f8",
-    "files": 452
+    "sha256": "3609be1aa7fc9819e3ffc68c1fc974ab9a9e5ffe6e0db224dbecd300a40173bc",
+    "files": 614
   },
-  "updatedAt": "2026-10-26T13:15:14Z",
-  "updateNote": "2026-10-26 21:20 同步：预设加称呼规则（饲养员=主人/爹，认；嘴硬一句就收）"
+  "updatedAt": "2026-10-28T04:42:00Z",
+  "updateNote": "2026-10-28 12:42 同步：tool-token-optimizer 改为 toolBudgets.bash=1000（5689 条真实结果回放，省量 21.7%→31.6%）；profile patch 与插件源码同步；清理 4 个未挂载的孤儿插件软链（bundle 列表不变）"
 }
