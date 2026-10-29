@@ -186,7 +186,7 @@
       "name": "dsh-wpac",
       "source": "vendored",
       "purpose": "WPAC agent 预设：W/P/A/C 四要素先补全再交付（姜涛）",
-      "version": "1.6.0",
+      "version": "1.7.0",
       "dir": "plugins/dsh-wpac"
     }
   ],
@@ -219,9 +219,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "dc775dd3c2f08be3a916fd00d6f5bb4e7e358db546a3c3319c85f546af8c353e",
+    "sha256": "3e0efc4aaf051b2e9f7f9f8fee5b486857221d00b70025a1f35edd53de0d09ca",
     "files": 620
   },
-  "updatedAt": "2026-10-29T12:19:48Z",
+  "updatedAt": "2026-10-29T12:38:33Z",
   "updateNote": "2026-10-28 12:42 同步：tool-token-optimizer 改为 toolBudgets.bash=1000（5689 条真实结果回放，省量 21.7%→31.6%）；profile patch 与插件源码同步；清理 4 个未挂载的孤儿插件软链（bundle 列表不变）"
 }
