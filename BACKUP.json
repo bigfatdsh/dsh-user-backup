@@ -39,7 +39,8 @@
     "@alanzhao/dsh-memory-lite",
     "dsh-fish",
     "dsh-fish-memory",
-    "dsh-wpac"
+    "dsh-wpac",
+    "dsh-wpac-probe34"
   ],
   "plugins": [
     {
@@ -186,7 +187,7 @@
       "name": "dsh-wpac",
       "source": "vendored",
       "purpose": "WPAC agent 预设：W/P/A/C 四要素先补全再交付（姜涛）",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "dir": "plugins/dsh-wpac"
     }
   ],
@@ -219,9 +220,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "ca7fad0a3b98a3f9420226d5b149c29f1ee2e5be6a9c61c35e983367a0155c10",
+    "sha256": "8bef6677f24d29929050a0e13bb07a8d3d44b8527a97f93031be231e65768182",
     "files": 623
   },
-  "updatedAt": "2026-10-29T14:14:00Z",
+  "updatedAt": "2026-10-29T14:37:15Z",
   "updateNote": "2026-10-28 12:42 同步：tool-token-optimizer 改为 toolBudgets.bash=1000（5689 条真实结果回放，省量 21.7%→31.6%）；profile patch 与插件源码同步；清理 4 个未挂载的孤儿插件软链（bundle 列表不变）"
 }
