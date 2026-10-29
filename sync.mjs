@@ -199,13 +199,16 @@ function main() {
   manifest.baseBundles = baseBundles
   manifest.bundles = (bundles ?? []).filter((name) => !name.startsWith('@deepseek-ai/'))
   manifest.dsh = { ...manifest.dsh, node: process.version }
-  manifest.createdAt = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z')
+  const stamp = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z')
+  // createdAt 只在首次生成时写一次；每次同步刷新 updatedAt（之前误把 createdAt 当成同步时间覆盖了）。
+  manifest.createdAt ??= stamp
+  manifest.updatedAt = stamp
   // 保持原清单顺序（README 的编号表跟着它走），新插件追加在末尾。
   manifest.plugins = rows
   if (!DRY) writeFileSync(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
 
   console.log(`\n${DRY ? '[dry] ' : ''}插件 ${rows.length} 个（vendored ${rows.filter((row) => row.source === 'vendored').length}）· 版本更新 ${updated} · 缺失 ${missing} · bundles ${manifest.bundles.length}`)
-  console.log(DRY ? '没有写任何文件。' : `同步完成：${manifest.createdAt}`)
+  console.log(DRY ? '没有写任何文件。' : `同步完成：${manifest.updatedAt}`)
 }
 
 main()
