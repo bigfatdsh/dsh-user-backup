@@ -1,7 +1,7 @@
 {
   "formatVersion": 2,
   "name": "用户备份",
-  "createdAt": "2026-10-29T10:52:32Z",
+  "createdAt": "2026-10-29T11:01:57Z",
   "snapshotOf": "DSH desktop profile",
   "dsh": {
     "appVersion": "0.2.1-rc.3",
@@ -38,7 +38,8 @@
     "dsh-pet",
     "@alanzhao/dsh-memory-lite",
     "dsh-fish",
-    "dsh-fish-memory"
+    "dsh-fish-memory",
+    "dsh-wpac"
   ],
   "plugins": [
     {
@@ -180,6 +181,13 @@
       "purpose": "记忆库：微信-QQ-房间共享、随时间自然遗忘、聊天进她的账本、历史回填",
       "version": "0.1.0",
       "dir": "plugins/dsh-fish-memory"
+    },
+    {
+      "name": "dsh-wpac",
+      "source": "vendored",
+      "purpose": "WPAC agent 预设：W/P/A/C 四要素先补全再交付（姜涛）",
+      "version": "1.1.0",
+      "dir": "plugins/dsh-wpac"
     }
   ],
   "settings": [
@@ -211,8 +219,8 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "b52355920c383f4de121c867bb990474a5dc28d693ef4bb465aa34156300e8a0",
-    "files": 609
+    "sha256": "a4860d04e5860cbd57cfa2d51c13dfd7a5246d1b3f5053f6e68082a175b3b7bc",
+    "files": 617
   },
   "updatedAt": "2026-10-28T04:42:00Z",
   "updateNote": "2026-10-28 12:42 同步：tool-token-optimizer 改为 toolBudgets.bash=1000（5689 条真实结果回放，省量 21.7%→31.6%）；profile patch 与插件源码同步；清理 4 个未挂载的孤儿插件软链（bundle 列表不变）"
