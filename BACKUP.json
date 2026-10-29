@@ -1,7 +1,7 @@
 {
   "formatVersion": 2,
   "name": "用户备份",
-  "createdAt": "2026-10-29T11:01:57Z",
+  "createdAt": "2026-10-25T05:11:40Z",
   "snapshotOf": "DSH desktop profile",
   "dsh": {
     "appVersion": "0.2.1-rc.3",
@@ -219,9 +219,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "a4860d04e5860cbd57cfa2d51c13dfd7a5246d1b3f5053f6e68082a175b3b7bc",
-    "files": 617
+    "sha256": "4e7f50a228fb74713064d47740ea45d9b7cbe5d476099afb45f14f02776425ae",
+    "files": 618
   },
-  "updatedAt": "2026-10-28T04:42:00Z",
+  "updatedAt": "2026-10-29T11:05:33Z",
   "updateNote": "2026-10-28 12:42 同步：tool-token-optimizer 改为 toolBudgets.bash=1000（5689 条真实结果回放，省量 21.7%→31.6%）；profile patch 与插件源码同步；清理 4 个未挂载的孤儿插件软链（bundle 列表不变）"
 }
