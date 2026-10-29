@@ -35,8 +35,14 @@ const MODULES = join(PROFILE, 'node_modules')
 const MANIFEST = join(HERE, 'BACKUP.json')
 const DRY = process.argv.includes('--dry-run')
 
-/** 不进备份的路径（依赖、版本库、缓存、系统垃圾）。 */
-const SKIP = new Set(['node_modules', '.git', '.cache', '.DS_Store', 'dist/.vite', '.turbo'])
+/** 不进备份的路径（依赖、版本库、缓存、系统垃圾、打补丁时的备份）。 */
+const SKIP = new Set(['node_modules', '.git', '.cache', '.DS_Store', '.turbo'])
+const SKIP_PATTERN = /\.(bak|orig|rej|log)$|\.pre-[a-z-]+\.bak$/
+
+/** 这个文件名该不该跳过。 */
+function skipName(name) {
+  return SKIP.has(name) || SKIP_PATTERN.test(name)
+}
 
 /** 磁盘上有、但之前没进备份的插件（第一次同步时手工登记一次，之后自动跟随版本）。 */
 const EXTRA = [
@@ -81,11 +87,12 @@ function copyTree(from, to) {
   const walk = (src, dst) => {
     if (!existsSync(src)) return
     if (statSync(src).isDirectory()) {
-      if (SKIP.has(src.slice(src.lastIndexOf('/') + 1))) return
+      if (skipName(src.slice(src.lastIndexOf('/') + 1))) return
       mkdirSync(dst, { recursive: true })
       for (const name of readdirSync(src)) walk(join(src, name), join(dst, name))
       return
     }
+    if (skipName(src.slice(src.lastIndexOf('/') + 1))) return
     mkdirSync(dirname(dst), { recursive: true })
     cpSync(src, dst)
     files += 1
