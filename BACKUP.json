@@ -1,7 +1,7 @@
 {
   "formatVersion": 2,
   "name": "用户备份",
-  "createdAt": "2026-10-29T10:46:50Z",
+  "createdAt": "2026-10-29T10:48:40Z",
   "snapshotOf": "DSH desktop profile",
   "dsh": {
     "appVersion": "0.2.1-rc.3",
@@ -211,7 +211,7 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "3609be1aa7fc9819e3ffc68c1fc974ab9a9e5ffe6e0db224dbecd300a40173bc",
+    "sha256": "ca663174f4a1744715b8d760456a9100c6c529d79a24f4cdf5ddb25ca3f15d57",
     "files": 614
   },
   "updatedAt": "2026-10-28T04:42:00Z",
