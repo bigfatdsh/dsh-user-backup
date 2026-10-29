@@ -102,3 +102,10 @@
     toolBudgets:
       bash: 1000
     logSavings: false
+
+# 2026-10-29：把默认预设设为 WPAC（用户要求；新会话直接用 WPAC，不必在界面上挑）。
+# 想改回标准：把 default 改成 standard，或删掉这一整段后重启 App。
+- id: agent-preset-registry
+  name: '@deepseek-ai/dsh-agent-preset-registry'
+  config:
+    default: wpac
