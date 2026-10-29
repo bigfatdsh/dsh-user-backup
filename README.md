@@ -5,7 +5,7 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 - 快照时间：2026-10-29 19:05（UTC+8）
 - DSH 版本：0.2.1-rc.3 · macOS arm64 · Node 24
 - 备份时状态：21 个插件均由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；3 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整
-- 本版变更：新增 **dsh-wpac** 1.1.0（WPAC agent 预设：W/P/A/C 四要素，缺项带选项追问，先定义再交付；作者姜涛）；新增 **dsh-fish**（大肥鱼本体，含本地补丁）与 **dsh-fish-memory**（记忆库）；`dsh-bili-scroll`/`dshmarket` 版本钉死；预设清理（删掉重复的 whale-fish，连旧的大肥鱼预设也一并删了，只剩 6 个预设）；`wechat_send_voice` 在 mac 上可用（edge-tts 声线）
+- 本版变更：新增 **dsh-wpac** 1.1.0（WPAC agent 预设：W/P/A/C 四要素，缺项带选项追问，先定义再交付；作者姜涛；独立仓库 bigfatdsh/dsh-wpac）；新增 **dsh-fish**（大肥鱼本体，含本地补丁）与 **dsh-fish-memory**（记忆库）；`dsh-bili-scroll`/`dshmarket` 版本钉死；预设清理（删掉重复的 whale-fish，连旧的大肥鱼预设也一并删了，只剩 6 个预设）；`wechat_send_voice` 在 mac 上可用（edge-tts 声线）
 
 ## 包含的插件
 
