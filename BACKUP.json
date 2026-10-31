@@ -23,7 +23,6 @@
     "dsh-fish",
     "@alanzhao/dsh-memory-lite",
     "dsh-optimizer",
-    "dsh-orb",
     "dsh-plugin-fast",
     "dsh-pet",
     "dsh-sd-bridge-mac",
@@ -207,6 +206,13 @@
       "source": "vendored",
       "dir": "plugins/dsh-live2dwaifu",
       "purpose": "Live2D 桌面角色：眨眼、呼吸、视线跟随、说话嘴动与可拖拽卡片"
+    },
+    {
+      "name": "dsh-oil-ui",
+      "version": "0.4.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-oil-ui",
+      "purpose": "Oil UI 设计技能与工具：风格探索、截图、评审"
     }
   ],
   "settings": [
@@ -238,9 +244,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "e8e6c4460d96c501960a91e82127992d977ed18871931b51754d2d927adf17df",
-    "files": 638
+    "sha256": "f81b5827fda615ab95e699db23eb7ef3dfb86079b57183f8fb84a46d1b571597",
+    "files": 716
   },
-  "updatedAt": "2026-10-31T03:04:15Z",
-  "updateNote": "2026-10-31 10:45 同步：新增 dsh-cookie-guard 1.0.0（GitHub: bigfatdsh/dsh-cookie-guard）、补录 dsh-live2dwaifu 2.3.0 / dshmarket 1.70.2 / dsh-pet 0.3.8；profile 当前 24 个非内置 bundle；DSH 0.2.1-rc.5"
+  "updatedAt": "2026-10-31T03:05:12Z",
+  "updateNote": "2026-10-31 10:45 同步：新增 dsh-cookie-guard 1.0.0（GitHub: bigfatdsh/dsh-cookie-guard）、补录 dsh-live2dwaifu 2.3.0 / dshmarket 1.70.2 / dsh-pet 0.3.8；profile 当前 24 个非内置 bundle；DSH 0.2.1-rc.5；2026-10-31 11:05 大肥鱼人设补充（鲸鱼娘 / 深海来的女仆 / 一句常不到 15 字 / 不总结不升华不写括号动作）+ 修 bundle 顺序（记忆库覆盖层挪到最后，桥接重新绑回 fish-home）"
 }
