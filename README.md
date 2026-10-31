@@ -4,7 +4,7 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 
 - 快照时间：2026-10-31 10:45（UTC+8）
 - DSH 版本：0.2.1-rc.5 · macOS arm64 · Node 24
-- 备份时状态：25 个插件均由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；3 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整
+- 备份时状态：25 个插件均由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整
 - 本版变更：新增 **dsh-cookie-guard** 1.0.0（清理登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开；独立仓库 bigfatdsh/dsh-cookie-guard）；补录 **dsh-live2dwaifu** 2.3.0（Live2D 桌面角色）与 **dshmarket** 1.70.2 / **dsh-pet** 0.3.8；同步 desktop profile 当前 24 个非内置 bundle；DSH 升级到 0.2.1-rc.5
 
 ## 包含的插件
