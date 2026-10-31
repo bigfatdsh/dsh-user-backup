@@ -21,7 +21,6 @@
     "dshmarket",
     "dsh-exec-optimizer",
     "dsh-fish",
-    "dsh-fish-memory",
     "@alanzhao/dsh-memory-lite",
     "dsh-optimizer",
     "dsh-orb",
@@ -39,6 +38,7 @@
     "dsh-wpac",
     "dsh-yishi-whale",
     "dsh-cookie-guard",
+    "dsh-fish-memory",
     "dsh-live2dwaifu"
   ],
   "plugins": [
@@ -245,9 +245,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "de8944a194151565b43e53a8d7c4df2a2fc02d358bbf9680d691c4cbce569fab",
+    "sha256": "56e1b7491523f0b8dee3377a8c1199dcada08ae16877d0e61f988f57d7bad113",
     "files": 686
   },
-  "updatedAt": "2026-10-31T02:45:09Z",
+  "updatedAt": "2026-10-31T03:03:49Z",
   "updateNote": "2026-10-31 10:45 同步：新增 dsh-cookie-guard 1.0.0（GitHub: bigfatdsh/dsh-cookie-guard）、补录 dsh-live2dwaifu 2.3.0 / dshmarket 1.70.2 / dsh-pet 0.3.8；profile 当前 24 个非内置 bundle；DSH 0.2.1-rc.5"
 }
