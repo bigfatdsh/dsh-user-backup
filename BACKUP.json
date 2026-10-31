@@ -4,7 +4,7 @@
   "createdAt": "2026-10-25T05:11:40Z",
   "snapshotOf": "DSH desktop profile",
   "dsh": {
-    "appVersion": "0.2.1-rc.3",
+    "appVersion": "0.2.1-rc.5",
     "profile": "desktop",
     "platform": "darwin-arm64",
     "node": "v24.16.0"
@@ -12,34 +12,34 @@
   "baseBundles": [
     "@deepseek-ai/dsh-base",
     "@deepseek-ai/dsh-web-app",
-    "@deepseek-ai/dsh-experimental-auto-review",
     "@deepseek-ai/dsh-experimental-session-search",
-    "@deepseek-ai/dsh-experimental-plugin-market-bundle"
+    "@deepseek-ai/dsh-experimental-session-titles-bundle"
   ],
   "bundles": [
-    "dsh-whale-widget",
-    "dsh-orb",
-    "dsh-univer-office",
-    "dsh-session-cost",
-    "dsh-tool-token-optimizer",
-    "dsh-exec-optimizer",
-    "dsh-computer-use-turbo",
-    "dsh-optimizer",
-    "dsh-univer-turbo",
-    "dsh-oil-ui",
-    "dsh-wechat-media",
-    "dsh-wechat-media-turbo",
-    "dsh-sd-bridge-mac",
-    "dsh-sd-turbo",
     "dsh-bili-scroll",
-    "dsh-plugin-fast",
-    "dsh-yishi-whale",
+    "dsh-computer-use-turbo",
     "dshmarket",
-    "dsh-pet",
-    "@alanzhao/dsh-memory-lite",
+    "dsh-exec-optimizer",
     "dsh-fish",
     "dsh-fish-memory",
-    "dsh-wpac"
+    "@alanzhao/dsh-memory-lite",
+    "dsh-optimizer",
+    "dsh-orb",
+    "dsh-plugin-fast",
+    "dsh-pet",
+    "dsh-sd-bridge-mac",
+    "dsh-sd-turbo",
+    "dsh-session-cost",
+    "dsh-tool-token-optimizer",
+    "dsh-univer-office",
+    "dsh-univer-turbo",
+    "dsh-wechat-media",
+    "dsh-wechat-media-turbo",
+    "dsh-whale-widget",
+    "dsh-wpac",
+    "dsh-yishi-whale",
+    "dsh-cookie-guard",
+    "dsh-live2dwaifu"
   ],
   "plugins": [
     {
@@ -169,6 +169,18 @@
       "purpose": "忆时适配版：跨会话增量记忆，只挂进 whale-lean 预设"
     },
     {
+      "name": "dshmarket",
+      "version": "1.70.2",
+      "source": "npm",
+      "purpose": "可视化插件市场：浏览、搜索、一键装"
+    },
+    {
+      "name": "dsh-pet",
+      "version": "0.3.8",
+      "source": "npm",
+      "purpose": "桌面宠物：动画、余额气泡、碎碎念"
+    },
+    {
       "name": "dsh-fish",
       "source": "vendored",
       "purpose": "大肥鱼本体：身份段 / 唤醒与成长账本 / B站 / 桌面与记忆工具（含本地补丁）",
@@ -188,6 +200,20 @@
       "purpose": "WPAC agent 预设：W/P/A/C 四要素先补全再交付（姜涛）",
       "version": "2.5.0",
       "dir": "plugins/dsh-wpac"
+    },
+    {
+      "name": "dsh-cookie-guard",
+      "source": "vendored",
+      "purpose": "清理 DSH 登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开",
+      "version": "1.0.0",
+      "dir": "plugins/dsh-cookie-guard"
+    },
+    {
+      "name": "dsh-live2dwaifu",
+      "version": "2.3.0",
+      "source": "vendored",
+      "dir": "plugins/dsh-live2dwaifu",
+      "purpose": "Live2D 桌面角色：眨眼、呼吸、视线跟随、说话嘴动与可拖拽卡片"
     }
   ],
   "settings": [
@@ -219,9 +245,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "d804ae3ad502e99c4abe42b18eb39f3b697512d9e0cabc66411a0fb3483c5e54",
-    "files": 626
+    "sha256": "de8944a194151565b43e53a8d7c4df2a2fc02d358bbf9680d691c4cbce569fab",
+    "files": 686
   },
-  "updatedAt": "2026-10-29T15:15:04Z",
-  "updateNote": "2026-10-28 12:42 同步：tool-token-optimizer 改为 toolBudgets.bash=1000（5689 条真实结果回放，省量 21.7%→31.6%）；profile patch 与插件源码同步；清理 4 个未挂载的孤儿插件软链（bundle 列表不变）"
+  "updatedAt": "2026-10-31T02:45:09Z",
+  "updateNote": "2026-10-31 10:45 同步：新增 dsh-cookie-guard 1.0.0（GitHub: bigfatdsh/dsh-cookie-guard）、补录 dsh-live2dwaifu 2.3.0 / dshmarket 1.70.2 / dsh-pet 0.3.8；profile 当前 24 个非内置 bundle；DSH 0.2.1-rc.5"
 }
