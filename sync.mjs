@@ -166,8 +166,8 @@ function main() {
     if (row.source !== 'vendored') continue
     if (dir === '') {
       missing += 1
-      gone.push(row)
-      console.log(`  ! ${row.name} 没装，从清单里去掉（--keep-missing 可保留）`)
+      if (process.argv.includes('--prune-missing')) gone.push(row)
+      console.log(`  ! ${row.name} 没装，跳过复制（清单保留；--prune-missing 才会去掉）`)
       continue
     }
     const target = join(HERE, row.dir ?? join('plugins', row.name))
@@ -181,8 +181,9 @@ function main() {
     }
   }
 
-  // 没装的 vendored 插件不留在清单里：留着等于告诉还原者「装这个」，但它已经不在当前 profile。
-  if (gone.length > 0 && !process.argv.includes('--keep-missing')) {
+  // 默认保留清单行：还原的目标可能是另一台机器，插件还没装不等于不该进备份。
+  // 只有显式 --prune-missing 才摘掉。
+  if (gone.length > 0) {
     for (const row of gone) {
       if (!DRY) rmSync(join(HERE, row.dir ?? join('plugins', row.name)), { recursive: true, force: true })
       const index = rows.indexOf(row)
