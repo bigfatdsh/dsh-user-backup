@@ -106,13 +106,6 @@
       "purpose": "Univer 调用提速降耗：单门面工具 + 结果压缩 + 批量"
     },
     {
-      "name": "dsh-oil-ui",
-      "version": "0.4.0",
-      "source": "vendored",
-      "dir": "plugins/dsh-oil-ui",
-      "purpose": "Oil UI 设计技能与工具：风格探索、截图、评审（需版本豁免）"
-    },
-    {
       "name": "dsh-wechat-media",
       "version": "1.6.3",
       "source": "vendored",
@@ -245,9 +238,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "56e1b7491523f0b8dee3377a8c1199dcada08ae16877d0e61f988f57d7bad113",
-    "files": 686
+    "sha256": "e8e6c4460d96c501960a91e82127992d977ed18871931b51754d2d927adf17df",
+    "files": 638
   },
-  "updatedAt": "2026-10-31T03:03:49Z",
+  "updatedAt": "2026-10-31T03:04:15Z",
   "updateNote": "2026-10-31 10:45 同步：新增 dsh-cookie-guard 1.0.0（GitHub: bigfatdsh/dsh-cookie-guard）、补录 dsh-live2dwaifu 2.3.0 / dshmarket 1.70.2 / dsh-pet 0.3.8；profile 当前 24 个非内置 bundle；DSH 0.2.1-rc.5"
 }
