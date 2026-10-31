@@ -155,6 +155,7 @@ function main() {
 
   let updated = 0
   let missing = 0
+  const gone = []
   for (const row of rows) {
     const dir = installedDir(row.name)
     const version = dir === '' ? '' : packageVersion(dir)
@@ -165,7 +166,8 @@ function main() {
     if (row.source !== 'vendored') continue
     if (dir === '') {
       missing += 1
-      console.log(`  ! ${row.name} 没装，跳过复制`)
+      gone.push(row)
+      console.log(`  ! ${row.name} 没装，从清单里去掉（--keep-missing 可保留）`)
       continue
     }
     const target = join(HERE, row.dir ?? join('plugins', row.name))
@@ -176,6 +178,15 @@ function main() {
       console.log(`  ✓ ${row.name.padEnd(32)} ${String(row.version).padEnd(14)} ${files} 个文件`)
     } else {
       console.log(`  · ${row.name.padEnd(32)} 会从 ${dir} 复制`)
+    }
+  }
+
+  // 没装的 vendored 插件不留在清单里：留着等于告诉还原者「装这个」，但它已经不在当前 profile。
+  if (gone.length > 0 && !process.argv.includes('--keep-missing')) {
+    for (const row of gone) {
+      if (!DRY) rmSync(join(HERE, row.dir ?? join('plugins', row.name)), { recursive: true, force: true })
+      const index = rows.indexOf(row)
+      if (index >= 0) rows.splice(index, 1)
     }
   }
 
