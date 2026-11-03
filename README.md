@@ -1,11 +1,11 @@
 # 用户备份
 
-DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**25 个插件（19 个仓库内 + 6 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 23 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
+DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**23 个插件（17 个仓库内 + 6 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 23 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
 
 - 快照时间：2026-11-03 19:20（UTC+8）
 - DSH 版本：0.2.1-rc.5 · macOS arm64 · Node 24
-- 备份时状态：25 个插件里 23 个由当前 desktop profile 装载；**dsh-live2dwaifu 与 dsh-oil-ui 当前未装**（清单行与上次快照的插件目录仍留在备份里，找回时可装回旧版）；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整
-- 本版变更：**dsh-univer-turbo 1.0.9 → 1.0.10**；重打 `plugins.tar.gz`（719 个文件 / 9.5MB）；其余插件版本与 2026-10-31 快照一致，勾选没变
+- 备份时状态：23 个插件全部由当前 desktop profile 装载（dsh-live2dwaifu 2.3.0、dsh-oil-ui 0.4.0 已按用户确认从本机和备份里删除）；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整
+- 本版变更：**移除 dsh-live2dwaifu 2.3.0 与 dsh-oil-ui 0.4.0**；dsh-univer-turbo 1.0.9 → 1.0.10；dsh-orb 0.1.9 → 0.2.0；重打 `plugins.tar.gz`（591 个文件 / 4.3MB）；插件表按 `BACKUP.json` 顺序重排
 
 ## 包含的插件
 
@@ -19,25 +19,23 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 | 6 | dsh-exec-optimizer | 1.0.0 | 仓库内 | 执行优化：并行/重试/截断/按需加载/防复读 |
 | 7 | dsh-computer-use-turbo | 1.0.0 | 仓库内 | Computer Use 会话加速：截图去重、压缩策略段 |
 | 8 | dsh-optimizer | 4.8.0 | 仓库内 | 推理等级 auto、精简化输出、花费预警面板 |
-| 9 | dsh-sd-bridge-mac | 1.0.0 | 仓库内 | SD 生图桥（macOS 原生）：A1111/Forge 文生图/图生图/蒙版重绘/模型清单/服务管理 |
-| 10 | dsh-sd-turbo | 1.0.0 | 仓库内 | SD 加速层：结果缓存、并发合并、串行队列、自动档位（8 步 / LCM 4 步）、重试 |
-| 11 | dsh-univer-turbo | 1.0.10 | 仓库内 | Univer 调用提速降耗：单门面工具 + 结果压缩 + 批量 |
-| 12 | dsh-oil-ui | 0.4.0 | 仓库内 | Oil UI 设计技能与工具：风格探索、截图、评审 |
-| 13 | dsh-wechat-media | 1.6.3 | 仓库内 | 微信桥：iLink 扫码登录、收发文本/文件/语音，每个联系人一个会话 |
-| 14 | dsh-wechat-media-turbo | 0.1.0 | 仓库内 | 微信精简 preset（鲸鱼娘·大肥鱼）：精简工具集与短回复 |
-| 15 | dsh-bili-scroll | 2.2.0 | npm | 每天刷一轮 B 站：读字幕挑值得的、写日报、值得的 @ 你 |
-| 16 | dsh-plugin-fast | 1.0.0 | 仓库内 | 装插件的快车道：一次调用完成安装、登记与体检 |
-| 17 | @alanzhao/dsh-memory-lite | 0.4.1-adapted.1 | 仓库内 | 轻量记忆：Markdown 记忆文件 + 目录索引（L0 上限 800 token） |
-| 18 | dsh-yishi-whale | 0.4.26-whale.1 | 仓库内 | 忆时适配版：跨会话增量记忆，只挂进 whale-lean 预设 |
-| 19 | dshmarket | 1.70.2 | npm | 可视化插件市场：浏览、搜索、一键装 |
-| 20 | dsh-pet | 0.3.8 | npm | 桌面宠物：动画、余额气泡、碎碎念 |
-| 21 | dsh-fish | 0.6.1 | 仓库内 | 大肥鱼本体：身份段、唤醒与成长账本、B站、桌面与记忆工具（含本地补丁） |
-| 22 | dsh-fish-memory | 0.1.0 | 仓库内 | 记忆库：微信/QQ/房间共享、随时间自然遗忘、聊天进她的账本、历史回填 |
-| 23 | dsh-wpac | 2.5.0 | 仓库内 | WPAC agent 预设：W/P/A/C 四要素先补全再交付，缺项带选项追问（作者姜涛） |
-| 24 | dsh-cookie-guard | 1.0.0 | 仓库内 | 清理登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开 |
-| 25 | dsh-live2dwaifu | 2.3.0 | 仓库内 | Live2D 桌面角色：眨眼、呼吸、视线跟随、说话嘴动 |
+| 9 | dsh-univer-turbo | 1.0.10 | 仓库内 | Univer 调用提速降耗：单门面工具 + 结果压缩 + 批量 |
+| 10 | dsh-wechat-media | 1.6.3 | 仓库内 | 微信桥：iLink 扫码登录、收发文本/文件/语音，每个联系人一个会话 |
+| 11 | dsh-wechat-media-turbo | 0.1.0 | 仓库内 | 微信精简 preset（鲸鱼娘·大肥鱼）：精简工具集与短回复 |
+| 12 | dsh-sd-bridge-mac | 1.0.0 | 仓库内 | SD 生图桥（macOS 原生）：A1111/Forge 文生图/图生图/蒙版重绘/模型清单/服务管理 |
+| 13 | dsh-sd-turbo | 1.0.0 | 仓库内 | SD 加速层：结果缓存、并发合并、串行队列、自动档位（8 步 / LCM 4 步）、重试 |
+| 14 | dsh-bili-scroll | 2.2.0 | npm | 每天刷一轮 B 站：读字幕挑值得的、写日报、值得的 @ 你 |
+| 15 | dsh-plugin-fast | 1.0.0 | 仓库内 | 装插件的快车道：一次调用完成安装、登记与体检 |
+| 16 | @alanzhao/dsh-memory-lite | 0.4.1-adapted.1 | 仓库内 | 轻量记忆：Markdown 记忆文件 + 目录索引（L0 上限 800 token） |
+| 17 | dsh-yishi-whale | 0.4.26-whale.1 | 仓库内 | 忆时适配版：跨会话增量记忆，只挂进 whale-lean 预设 |
+| 18 | dshmarket | 1.70.2 | npm | 可视化插件市场：浏览、搜索、一键装 |
+| 19 | dsh-pet | 0.3.8 | npm | 桌面宠物：动画、余额气泡、碎碎念 |
+| 20 | dsh-fish | 0.6.1 | 仓库内 | 大肥鱼本体：身份段、唤醒与成长账本、B站、桌面与记忆工具（含本地补丁） |
+| 21 | dsh-fish-memory | 0.1.0 | 仓库内 | 记忆库：微信/QQ/房间共享、随时间自然遗忘、聊天进她的账本、历史回填 |
+| 22 | dsh-wpac | 2.5.0 | 仓库内 | WPAC agent 预设：W/P/A/C 四要素先补全再交付，缺项带选项追问（作者姜涛） |
+| 23 | dsh-cookie-guard | 1.0.0 | 仓库内 | 清理登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开 |
 
-npm 的六个包按**精确版本**从 registry 安装；其余 19 个在 `plugins.tar.gz` 里，解包后以 `link:` 方式装进 profile。
+npm 的六个包按**精确版本**从 registry 安装；其余 17 个在 `plugins.tar.gz` 里，解包后以 `link:` 方式装进 profile。
 
 ## 怎么同步这份备份
 
@@ -80,9 +78,9 @@ node install.mjs
 ### 脚本做了什么
 
 1. 解包 `plugins.tar.gz`（如果 `plugins/` 不存在）。
-2. 用 DSH 自带 pnpm 执行 `dsh plugin --profile desktop add`，一次装 20 个包。
-3. 把 21 个 bundle 写进 `package.json` 的 `dsh.profile.bundles`（顺序与备份一致；已有的其它 bundle 会保留）。
-4. 合并 `compatibility.json` 里的插件版本豁免（`dsh-oil-ui@0.4.0`、`dsh-bili-scroll@2.2.0`、`dsh-plugin-fast@1.0.0` 在当前 DSH 版本上需要它，否则会被跳过）。
+2. 用 DSH 自带 pnpm 执行 `dsh plugin --profile desktop add`，一次装 23 个包。
+3. 把 23 个 bundle 写进 `package.json` 的 `dsh.profile.bundles`（顺序与备份一致；已有的其它 bundle 会保留）。
+4. 合并 `compatibility.json` 里的插件版本豁免（`dsh-bili-scroll@2.2.0`、`dsh-plugin-fast@1.0.0` 在当前 DSH 版本上需要它，否则会被跳过；文件里还留着 `dsh-oil-ui@0.4.0` 的旧条目，插件已不在备份里，留着无害）。
 5. 把 `patch/plugins.yml` 里目标 profile 还没有的 override 追加到 `cordis.patch.yml`（当前是 `univer` 的 `autoOpenLivePreview: false`、`memory-lite` 的索引与抽取配置、`bili-scroll` 的刷视频配置）。
 6. 只补**缺失**的插件设置：`optimizer.json`、`exec-optimizer.json`、`orb-avatar.json`（已有文件不覆盖；`--no-settings` 可关闭）。
 7. 动手前把现有 `package.json` / `cordis.patch.yml` 备份到 `~/.dsh/profiles/desktop/.user-backup-<时间>/`。
@@ -98,14 +96,14 @@ node install.mjs
 
 ### 怎么确认装好了
 
-重启后打开「插件 → 已安装插件」：应有 25 个插件（当前机器上 dsh-live2dwaifu / dsh-oil-ui 未装，是 23 个），逐个点进去组件状态为「运行中」（dsh-orb 是 4 个组件全绿）；「实验性插件」里自动授权审查、会话搜索、插件市场三项应开启。
+重启后打开「插件 → 已安装插件」：应有 23 个插件，逐个点进去组件状态为「运行中」（dsh-orb 是 4 个组件全绿）；「实验性插件」里自动授权审查、会话搜索、插件市场三项应开启。
 
 功能上可快速看：
 
 - 输入框下有钱数（session-cost）、右下角有鲸鱼挂件（whale）；
-- 工具列表里有 `sd_draw`、`sd_img2img`、`sd_inpaint`、`sd_models`、`sd_status`、`sd_turbo_status`、单个 `univer` 门面工具（univer-turbo 接管了 14 个 `univer_*`）、`oil_ui_*`、`wechat_status`、`bili_run`/`bili_search`/`bili_subtitle`/`bili_comments`/`bili_cover`；
+- 工具列表里有 `sd_draw`、`sd_img2img`、`sd_inpaint`、`sd_models`、`sd_status`、`sd_turbo_status`、单个 `univer` 门面工具（univer-turbo 接管了 14 个 `univer_*`）、`wechat_status`、`bili_run`/`bili_search`/`bili_subtitle`/`bili_comments`/`bili_cover`；
 - A1111 的 API 在 `http://127.0.0.1:7860`；`sd_status` 能看在线状态与模型。
-- 技能目录里有 `oil-ui`。
+- 技能目录里有 `wpac`（随 dsh-wpac 插件安装）。
 
 ## SD 出图还需要什么（重要）
 
@@ -119,7 +117,7 @@ node install.mjs
 
 ## 兼容性注意
 
-`dsh-oil-ui@0.4.0` 声明 `engines.dsh = 0.2.1-rc.2`，而当前 DSH 是 0.2.1-rc.3；`dsh-bili-scroll@2.2.0` 声明 `>=0.1.7-rc.1`，但预发布版本比较同样会被判不兼容；`dsh-plugin-fast@1.0.0` 也已在豁免表里。备份里带了 profile 的 `compatibility.json` 豁免，恢复后可以正常加载。**DSH 升级到新版本后这些豁免会失效**，届时需要重新授权（`dsh plugin allow-version` 或插件管理器里的对应入口），否则 oil-ui、bili-scroll 会被跳过。
+`dsh-bili-scroll@2.2.0` 声明 `>=0.1.7-rc.1`，但预发布版本比较会被判不兼容；`dsh-plugin-fast@1.0.0` 也已在豁免表里。备份里带了 profile 的 `compatibility.json` 豁免，恢复后可以正常加载。**DSH 升级到新版本后这些豁免会失效**，届时需要重新授权（`dsh plugin allow-version` 或插件管理器里的对应入口），否则 bili-scroll、plugin-fast 会被跳过。
 
 ## 给 DSH 代理的说明
 
@@ -128,4 +126,4 @@ node install.mjs
 1. 仓库 `bigfatdsh/dsh-user-backup`（公开）。本机 `github.com` 不可直连，`api.github.com` 可用；走 API 取 `tarball`（公开仓库无需 token），或用 codeload。
 2. 解包后运行 `node install.mjs`。安装会写 `~/.dsh`，必须用完整文件权限（`danger-full-access` 或在系统终端执行）。
 3. 装完必须重启 DSH（profile 只在启动时装载）。
-4. 重启后按上面「怎么确认装好了」核对：25 个插件 + 4 个内置 bundle + compatibility 豁免，缺一项都不算完成。
+4. 重启后按上面「怎么确认装好了」核对：23 个插件 + 4 个内置 bundle + compatibility 豁免，缺一项都不算完成。
