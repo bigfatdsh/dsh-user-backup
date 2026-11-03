@@ -199,20 +199,6 @@
       "purpose": "清理 DSH 登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开",
       "version": "1.0.0",
       "dir": "plugins/dsh-cookie-guard"
-    },
-    {
-      "name": "dsh-live2dwaifu",
-      "version": "2.3.0",
-      "source": "vendored",
-      "dir": "plugins/dsh-live2dwaifu",
-      "purpose": "Live2D 桌面角色：眨眼、呼吸、视线跟随、说话嘴动与可拖拽卡片"
-    },
-    {
-      "name": "dsh-oil-ui",
-      "version": "0.4.0",
-      "source": "vendored",
-      "dir": "plugins/dsh-oil-ui",
-      "purpose": "Oil UI 设计技能与工具：风格探索、截图、评审"
     }
   ],
   "settings": [
@@ -244,9 +230,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "76f5d58e1c0eef5215a694191ad2b50cf97db759015c4a6ad849a20bb617fc44",
-    "files": 719
+    "sha256": "44fc6b8bc19f37939ddfbfa2f61dfd5e39da7e10f4ebd9b932b79e4ae3c05504",
+    "files": 591
   },
-  "updatedAt": "2026-11-03T11:20:46Z",
+  "updatedAt": "2026-11-03T11:25:15Z",
   "updateNote": "2026-10-31 10:45 同步：新增 dsh-cookie-guard 1.0.0（GitHub: bigfatdsh/dsh-cookie-guard）、补录 dsh-live2dwaifu 2.3.0 / dshmarket 1.70.2 / dsh-pet 0.3.8；profile 当前 24 个非内置 bundle；DSH 0.2.1-rc.5；2026-10-31 11:05 大肥鱼人设补充（鲸鱼娘 / 深海来的女仆 / 一句常不到 15 字 / 不总结不升华不写括号动作）+ 修 bundle 顺序（记忆库覆盖层挪到最后，桥接重新绑回 fish-home）"
 }
