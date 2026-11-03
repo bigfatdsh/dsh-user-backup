@@ -1,18 +1,18 @@
 # 用户备份
 
-DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**25 个插件（19 个仓库内 + 6 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 24 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
+DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**25 个插件（19 个仓库内 + 6 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 23 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
 
-- 快照时间：2026-10-31 10:45（UTC+8）
+- 快照时间：2026-11-03 19:20（UTC+8）
 - DSH 版本：0.2.1-rc.5 · macOS arm64 · Node 24
-- 备份时状态：25 个插件均由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整
-- 本版变更：新增 **dsh-cookie-guard** 1.0.0（清理登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开；独立仓库 bigfatdsh/dsh-cookie-guard）；补录 **dsh-live2dwaifu** 2.3.0（Live2D 桌面角色）与 **dshmarket** 1.70.2 / **dsh-pet** 0.3.8；同步 desktop profile 当前 24 个非内置 bundle；DSH 升级到 0.2.1-rc.5；另：大肥鱼人设补充（鲸鱼娘 / 深海来的女仆），bundle 顺序修复（桥接重绑 fish-home）
+- 备份时状态：25 个插件里 23 个由当前 desktop profile 装载；**dsh-live2dwaifu 与 dsh-oil-ui 当前未装**（清单行与上次快照的插件目录仍留在备份里，找回时可装回旧版）；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整
+- 本版变更：**dsh-univer-turbo 1.0.9 → 1.0.10**；重打 `plugins.tar.gz`（719 个文件 / 9.5MB）；其余插件版本与 2026-10-31 快照一致，勾选没变
 
 ## 包含的插件
 
 | # | 插件 | 版本 | 来源 | 作用 |
 |---|---|---|---|---|
 | 1 | dsh-whale-widget | 0.4.2 | npm | 右下角余额/用量小鲸鱼挂件 |
-| 2 | dsh-orb | 0.1.9 | npm | 桌面悬浮球 + Computer Use 预设 + 后台 code_agent |
+| 2 | dsh-orb | 0.2.0 | npm | 桌面悬浮球 + Computer Use 预设 + 后台 code_agent |
 | 3 | dsh-univer-office | 0.3.7 | npm | Univer 文档/表格/幻灯片工具与实时预览 |
 | 4 | dsh-session-cost | 1.0.1 | 仓库内 | 本轮/本会话花费、缓存命中、峰谷价 |
 | 5 | dsh-tool-token-optimizer | 1.0.14 | 仓库内 | 工具结果落盘前压缩（默认 1600 字符内联预算） |
@@ -21,7 +21,7 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 | 8 | dsh-optimizer | 4.8.0 | 仓库内 | 推理等级 auto、精简化输出、花费预警面板 |
 | 9 | dsh-sd-bridge-mac | 1.0.0 | 仓库内 | SD 生图桥（macOS 原生）：A1111/Forge 文生图/图生图/蒙版重绘/模型清单/服务管理 |
 | 10 | dsh-sd-turbo | 1.0.0 | 仓库内 | SD 加速层：结果缓存、并发合并、串行队列、自动档位（8 步 / LCM 4 步）、重试 |
-| 11 | dsh-univer-turbo | 1.0.9 | 仓库内 | Univer 调用提速降耗：单门面工具 + 结果压缩 + 批量 |
+| 11 | dsh-univer-turbo | 1.0.10 | 仓库内 | Univer 调用提速降耗：单门面工具 + 结果压缩 + 批量 |
 | 12 | dsh-oil-ui | 0.4.0 | 仓库内 | Oil UI 设计技能与工具：风格探索、截图、评审 |
 | 13 | dsh-wechat-media | 1.6.3 | 仓库内 | 微信桥：iLink 扫码登录、收发文本/文件/语音，每个联系人一个会话 |
 | 14 | dsh-wechat-media-turbo | 0.1.0 | 仓库内 | 微信精简 preset（鲸鱼娘·大肥鱼）：精简工具集与短回复 |
@@ -98,7 +98,7 @@ node install.mjs
 
 ### 怎么确认装好了
 
-重启后打开「插件 → 已安装插件」：应有 21 个插件，逐个点进去组件状态为「运行中」（dsh-orb 是 4 个组件全绿）；「实验性插件」里自动授权审查、会话搜索、插件市场三项应开启。
+重启后打开「插件 → 已安装插件」：应有 25 个插件（当前机器上 dsh-live2dwaifu / dsh-oil-ui 未装，是 23 个），逐个点进去组件状态为「运行中」（dsh-orb 是 4 个组件全绿）；「实验性插件」里自动授权审查、会话搜索、插件市场三项应开启。
 
 功能上可快速看：
 
@@ -128,4 +128,4 @@ node install.mjs
 1. 仓库 `bigfatdsh/dsh-user-backup`（公开）。本机 `github.com` 不可直连，`api.github.com` 可用；走 API 取 `tarball`（公开仓库无需 token），或用 codeload。
 2. 解包后运行 `node install.mjs`。安装会写 `~/.dsh`，必须用完整文件权限（`danger-full-access` 或在系统终端执行）。
 3. 装完必须重启 DSH（profile 只在启动时装载）。
-4. 重启后按上面「怎么确认装好了」核对：21 个插件 + 3 个内置实验性插件 + compatibility 豁免，缺一项都不算完成。
+4. 重启后按上面「怎么确认装好了」核对：25 个插件 + 4 个内置 bundle + compatibility 豁免，缺一项都不算完成。
