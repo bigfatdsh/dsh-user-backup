@@ -67,9 +67,9 @@ const EXTRA = [
     purpose: '清理 DSH 登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开',
   },
   {
-    name: 'dsh-live2dwaifu',
-    source: 'vendored',
-    purpose: 'Live2D 桌面角色：眨眼、呼吸、视线跟随、说话嘴动与可拖拽卡片',
+    name: 'dsh-context',
+    source: 'npm',
+    purpose: '上下文洞察：会话 Context 标签页、/context 命令、上下文与 Fleet 看板',
   },
 ]
 
