@@ -26,3 +26,10 @@
   name: "@deepseek-ai/dsh-client-ui-settings"
   config:
     enabled: false
+- id: dsh-context
+  name: dsh-context
+  config:
+    defaultOverviewRange: 7d
+    overviewAutoSteps: "100"
+    promptPrefix: ""
+    promptSuffix: ""
