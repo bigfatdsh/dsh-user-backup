@@ -34,12 +34,12 @@
     "dsh-wechat-media",
     "dsh-wechat-media-turbo",
     "dsh-whale-widget",
-    "dsh-wpac",
     "dsh-yishi-whale",
     "dsh-cookie-guard",
     "dsh-fish-memory",
     "dsh-orb",
-    "dsh-context"
+    "dsh-context",
+    "dsh-wpac"
   ],
   "plugins": [
     {
@@ -65,21 +65,21 @@
     },
     {
       "name": "dsh-session-cost",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "source": "vendored",
       "dir": "plugins/dsh-session-cost",
       "purpose": "本轮/本会话花费、缓存命中与峰谷价"
     },
     {
       "name": "dsh-tool-token-optimizer",
-      "version": "1.0.14",
+      "version": "1.0.16",
       "source": "vendored",
       "dir": "plugins/dsh-tool-token-optimizer",
       "purpose": "工具结果落盘前压缩（1600 字符内联预算）"
     },
     {
       "name": "dsh-exec-optimizer",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "source": "vendored",
       "dir": "plugins/dsh-exec-optimizer",
       "purpose": "执行优化：并行/重试/截断/按需加载/防复读"
@@ -191,7 +191,7 @@
       "name": "dsh-wpac",
       "source": "vendored",
       "purpose": "WPAC agent 预设：W/P/A/C 四要素先补全再交付（姜涛）",
-      "version": "2.5.0",
+      "version": "2.5.1",
       "dir": "plugins/dsh-wpac"
     },
     {
@@ -237,9 +237,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "e028bee35590a52c0a6fed54aa4bc0a16e2c0b4460feb2c909455ef8f3752afc",
-    "files": 592
+    "sha256": "ea3fd523fcc596325759ac9ab21daaf9f761e177844bdda10e3429f18d8a1d49",
+    "files": 761
   },
-  "updatedAt": "2026-11-07T03:54:14Z",
+  "updatedAt": "2026-11-07T10:41:28Z",
   "updateNote": "2026-10-31 10:45 同步：新增 dsh-cookie-guard 1.0.0（GitHub: bigfatdsh/dsh-cookie-guard）、补录 dsh-live2dwaifu 2.3.0 / dshmarket 1.70.2 / dsh-pet 0.3.8；profile 当前 24 个非内置 bundle；DSH 0.2.1-rc.5；2026-10-31 11:05 大肥鱼人设补充（鲸鱼娘 / 深海来的女仆 / 一句常不到 15 字 / 不总结不升华不写括号动作）+ 修 bundle 顺序（记忆库覆盖层挪到最后，桥接重新绑回 fish-home）；2026-11-06 19:05 同步：新增 dsh-context 0.82.1（npm，上下文洞察 / Context 标签页 / /context / Fleet 看板；profile 配 7 天默认范围、空 prompt 前后缀）；DSH 0.2.2-rc.1；插件 23→24"
 }
