@@ -1,5 +1,5 @@
 {
-  "resultCap": true,
+  "resultCap": false,
   "cacheSafe": true,
   "lazyTools": true,
   "autoCompact": true
