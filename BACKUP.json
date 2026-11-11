@@ -237,9 +237,9 @@
   },
   "payload": {
     "archive": "plugins.tar.gz",
-    "sha256": "cc80777dc79775023dc5b668a16a3d8916f2bd55bf2cfaddb3ec81074291d24e",
+    "sha256": "8e15c624c8d9f66139658f6ef44545329588c4067c76f1494f3e287dce1a84cd",
     "files": 782
   },
-  "updatedAt": "2026-11-11T13:31:40Z",
+  "updatedAt": "2026-11-11T13:44:19Z",
   "updateNote": "2026-10-31 10:45 同步：新增 dsh-cookie-guard 1.0.0（GitHub: bigfatdsh/dsh-cookie-guard）、补录 dsh-live2dwaifu 2.3.0 / dshmarket 1.70.2 / dsh-pet 0.3.8；profile 当前 24 个非内置 bundle；DSH 0.2.1-rc.5；2026-10-31 11:05 大肥鱼人设补充（鲸鱼娘 / 深海来的女仆 / 一句常不到 15 字 / 不总结不升华不写括号动作）+ 修 bundle 顺序（记忆库覆盖层挪到最后，桥接重新绑回 fish-home）；2026-11-06 19:05 同步：新增 dsh-context 0.82.1（npm，上下文洞察 / Context 标签页 / /context / Fleet 看板；profile 配 7 天默认范围、空 prompt 前后缀）；DSH 0.2.2-rc.1；插件 23→24"
 }
