@@ -2,10 +2,10 @@
 
 DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**24 个插件（17 个仓库内 + 7 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 24 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
 
-- 快照时间：2026-11-06 19:05（UTC+8）
-- DSH 版本：0.2.2-rc.1 · macOS arm64 · Node 24
-- 备份时状态：24 个插件全部由当前 desktop profile 装载（dsh-live2dwaifu、dsh-oil-ui 已删除）；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整；dsh-context 装好待重启宿主后生效
-- 本版变更：**新增 dsh-context 0.82.1（npm）**——会话 Context 标签页、`/context` 命令、上下文洞察与 Fleet 看板；profile 里已配 `defaultOverviewRange: 7d`、`overviewAutoSteps: 100`、空 `promptPrefix/promptSuffix`；重打 `plugins.tar.gz`（591 个文件 / 4.3MB）；DSH 升到 0.2.2-rc.1
+- 快照时间：2026-11-12 21:38（UTC+8）
+- DSH 版本：0.2.2-rc.2 · macOS arm64 · Node 24
+- 备份时状态：24 个插件全部由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整；dsh-context 已生效（Context 标签页 / `/context`）
+- 本版变更：**dsh-wpac 升到 0.5.0**——交付前的结构确认弹窗（挂在 `shell.overlay`，盖住整个应用）：左侧选模块、右侧看正文、单槽去重（不会弹两次）、一轮确认、PPT/Word/表格按 `format` 适配；重打 `plugins.tar.gz`（794 个文件 / 41.9MB / 24 个插件，17 个仓库内）
 
 ## 包含的插件
 
@@ -32,7 +32,7 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 | 19 | dsh-pet | 0.3.8 | npm | 桌面宠物：动画、余额气泡、碎碎念 |
 | 20 | dsh-fish | 0.6.1 | 仓库内 | 大肥鱼本体：身份段、唤醒与成长账本、B站、桌面与记忆工具（含本地补丁） |
 | 21 | dsh-fish-memory | 0.1.0 | 仓库内 | 记忆库：微信/QQ/房间共享、随时间自然遗忘、聊天进她的账本、历史回填 |
-| 22 | dsh-wpac | 2.5.0 | 仓库内 | WPAC agent 预设：W/P/A/C 四要素先补全再交付，缺项带选项追问（作者姜涛） |
+| 22 | dsh-wpac | 0.5.0 | 仓库内 | WPAC agent 预设：W/P/A/C 四要素先补全再交付，缺项带选项追问（作者姜涛） |
 | 23 | dsh-cookie-guard | 1.0.0 | 仓库内 | 清理登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开 |
 | 24 | dsh-context | 0.82.1 | npm | 上下文洞察：Context 标签页、`/context` 命令、上下文/Fleet 看板 |
 
