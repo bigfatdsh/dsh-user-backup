@@ -50,7 +50,8 @@ const MANIFEST = join(HERE, 'BACKUP.json')
 const DRY = process.argv.includes('--dry-run')
 
 /** 不进备份的路径（依赖、版本库、缓存、系统垃圾、打补丁时的备份）。 */
-const SKIP = new Set(['node_modules', '.git', '.cache', '.DS_Store', '.turbo'])
+// .corpus 是插件的开发语料（原始会话日志，上百 MB），还原用不到，也不该进备份。
+const SKIP = new Set(['node_modules', '.git', '.cache', '.DS_Store', '.turbo', '.corpus', '.dsh-scratch'])
 const SKIP_PATTERN = /\.(bak|orig|rej|log)$|\.pre-[a-z-]+\.bak$/
 
 /** 这个文件名该不该跳过。 */
