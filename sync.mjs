@@ -27,6 +27,20 @@ import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execFileSync } from 'node:child_process'
 
+/** 当前装着的 DSH App 版本（macOS Info.plist）；读不到就返回空串。 */
+function appVersion() {
+  try {
+    return execFileSync(
+      'defaults',
+      ['read', '/Applications/DeepSeek Harness.app/Contents/Info', CFBundle_KEY],
+      { encoding: 'utf8' },
+    ).trim()
+  } catch {
+    return ''
+  }
+}
+const CFBundle_KEY = 'CFBundleShortVersionString'
+
 const HERE = dirname(fileURLToPath(import.meta.url))
 const HOME = homedir()
 const DSH_HOME = process.env.DSH_HOME && process.env.DSH_HOME.trim() !== '' ? resolve(process.env.DSH_HOME) : join(HOME, '.dsh')
@@ -232,7 +246,8 @@ function main() {
   const baseBundles = (bundles ?? []).filter((name) => name.startsWith('@deepseek-ai/'))
   manifest.baseBundles = baseBundles
   manifest.bundles = (bundles ?? []).filter((name) => !name.startsWith('@deepseek-ai/'))
-  manifest.dsh = { ...manifest.dsh, node: process.version }
+  const version = appVersion()
+  manifest.dsh = { ...manifest.dsh, node: process.version, ...(version ? { appVersion: version } : {}) }
   const stamp = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z')
   // createdAt 只在首次生成时写一次；每次同步刷新 updatedAt（之前误把 createdAt 当成同步时间覆盖了）。
   manifest.createdAt ??= stamp
