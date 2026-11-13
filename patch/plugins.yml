@@ -6,7 +6,7 @@
   config:
     provider: deepseek-account
     model: deepseek-flash
-    reasoningEffort: high
+    reasoningEffort: max
 - id: ui-settings-account
   name: "@deepseek-ai/dsh-client-ui-settings-account"
   config:
@@ -21,7 +21,7 @@
   name: "@deepseek-ai/dsh-client-ui-chat"
   config:
     transcriptView: standard
-    performanceUsage: compact
+    performanceUsage: detailed
 - id: ui-settings
   name: "@deepseek-ai/dsh-client-ui-settings"
   config:
