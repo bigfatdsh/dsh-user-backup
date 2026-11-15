@@ -19,6 +19,7 @@ import { createHash } from 'node:crypto'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { homedir } from 'node:os'
 import { execSync } from 'node:child_process'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
@@ -40,12 +41,17 @@ const FILES = [
 ]
 
 function token() {
+  // 先读本地凭据文件（不弹钥匙串密码框）；没有才去钥匙串拿。
   try {
-    return execSync('security find-internet-password -s github.com -w', { encoding: 'utf8' }).trim()
-  } catch {
-    console.error('取不到 GitHub token（钥匙串里没有 github.com 的互联网密码）。')
-    process.exit(1)
-  }
+    const fromFile = readFileSync(`${homedir()}/.dsh/github-token`, 'utf8').trim();
+    if (fromFile) return fromFile;
+  } catch { /* 没有文件 */ }
+  try {
+    const fromKeychain = execSync('security find-internet-password -s github.com -w', { encoding: 'utf8' }).trim();
+    if (fromKeychain) return fromKeychain;
+  } catch { /* 钥匙串也没有 */ }
+  console.error('取不到 GitHub token（~/.dsh/github-token 和钥匙串都没有）。');
+  process.exit(1);
 }
 
 /** git blob 的 sha1：远端文件对象的 sha 就是这个。 */
