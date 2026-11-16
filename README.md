@@ -2,7 +2,7 @@
 
 DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**24 个插件（17 个仓库内 + 7 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 24 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
 
-- 快照时间：2026-11-15 14:10（UTC+8）
+- 快照时间：2026-11-16 19:50（UTC+8）
 - DSH 版本：0.2.2-rc.2 · macOS arm64 · Node 24
 - 备份时状态：24 个插件全部由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整；dsh-context 已生效（Context 标签页 / `/context`）
 - 本版变更：**dsh-wpac 0.8.3**——合并 0.8.2 的「移除文本类去 AI 味机制」（persona/SKILL/references/preflight 精简，管线 8→6 段，自检 11→8 条），本机 rc.3 工具面重新同步（123 行含 tool-office）；重打 `plugins.tar.gz`
