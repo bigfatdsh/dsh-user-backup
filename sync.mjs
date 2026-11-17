@@ -86,6 +86,11 @@ const EXTRA = [
     source: 'npm',
     purpose: '上下文洞察：会话 Context 标签页、/context 命令、上下文与 Fleet 看板',
   },
+  {
+    name: 'dsh-pet-bibo-voice',
+    source: 'vendored',
+    purpose: 'dsh-pet 附属语音插件：对话/碎碎念/带文字表情本地合成哔哔啵啵声（fish/lumo，自动接管语音设置）',
+  },
 ]
 
 function readJson(file) {
