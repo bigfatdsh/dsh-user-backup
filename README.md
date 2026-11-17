@@ -1,11 +1,11 @@
 # 用户备份
 
-DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**24 个插件（17 个仓库内 + 7 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 24 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
+DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**25 个插件（18 个仓库内 + 7 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 25 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
 
-- 快照时间：2026-11-16 20:12（UTC+8）
-- DSH 版本：0.2.2-rc.2 · macOS arm64 · Node 24
-- 备份时状态：24 个插件全部由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整；dsh-context 已生效（Context 标签页 / `/context`）
-- 本版变更：**dsh-pet 0.3.8 → 0.4.9**（语音播报/按住说话、头像上传、余额渠道可选、天气与位置、`/pic` 用户目录覆盖、语音服务重构）；dsh-wpac 仍为 0.8.3；重打 `plugins.tar.gz`
+- 快照时间：2026-11-17 18:55（UTC+8）
+- DSH 版本：0.2.2-rc.3 · macOS arm64 · Node 24
+- 备份时状态：25 个插件全部由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整；dsh-context 已生效（Context 标签页 / `/context`）；桌宠已接上「哔哔啵啵」语音（bibo/fish，voiceEnabled/voiceWhisperEnabled 已开）
+- 本版变更：**新增 dsh-pet-bibo-voice 0.1.0**（dsh-pet 的「哔哔啵啵」语音：对话/碎碎念/带文字表情本地合成，fish/lumo 声线，自动接管语音设置）；dsh-pet 仍为 0.4.9；重打 `plugins.tar.gz`
 
 ## 包含的插件
 
@@ -35,8 +35,9 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 | 22 | dsh-wpac | 0.8.3 | 仓库内 | WPAC agent 预设：W/P/A/C 四要素先补全再交付，缺项带选项追问（作者姜涛） |
 | 23 | dsh-cookie-guard | 1.0.0 | 仓库内 | 清理登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开 |
 | 24 | dsh-context | 0.82.1 | npm | 上下文洞察：Context 标签页、`/context` 命令、上下文/Fleet 看板 |
+| 25 | dsh-pet-bibo-voice | 0.1.0 | 仓库内 | 桌宠语音：对话/碎碎念/带文字表情本地合成哔哔啵啵声（fish/lumo） |
 
-npm 的七个包按**精确版本**从 registry 安装；其余 17 个在 `plugins.tar.gz` 里，解包后以 `link:` 方式装进 profile。
+npm 的七个包按**精确版本**从 registry 安装；其余 18 个在 `plugins.tar.gz` 里，解包后以 `link:` 方式装进 profile。
 
 ## 怎么同步这份备份
 
@@ -79,8 +80,8 @@ node install.mjs
 ### 脚本做了什么
 
 1. 解包 `plugins.tar.gz`（如果 `plugins/` 不存在）。
-2. 用 DSH 自带 pnpm 执行 `dsh plugin --profile desktop add`，一次装 24 个包。
-3. 把 24 个 bundle 写进 `package.json` 的 `dsh.profile.bundles`（顺序与备份一致；已有的其它 bundle 会保留）。
+2. 用 DSH 自带 pnpm 执行 `dsh plugin --profile desktop add`，一次装 25 个包。
+3. 把 25 个 bundle 写进 `package.json` 的 `dsh.profile.bundles`（顺序与备份一致；已有的其它 bundle 会保留）。
 4. 合并 `compatibility.json` 里的插件版本豁免（`dsh-bili-scroll@2.2.0`、`dsh-plugin-fast@1.0.0` 在当前 DSH 版本上需要它，否则会被跳过；文件里还留着 `dsh-oil-ui@0.4.0` 的旧条目，插件已不在备份里，留着无害）。
 5. 把 `patch/plugins.yml` 里目标 profile 还没有的 override 追加到 `cordis.patch.yml`（当前是 `univer` 的 `autoOpenLivePreview: false`、`memory-lite` 的索引与抽取配置、`bili-scroll` 的刷视频配置）。
 6. 只补**缺失**的插件设置：`optimizer.json`、`exec-optimizer.json`、`orb-avatar.json`（已有文件不覆盖；`--no-settings` 可关闭）。
@@ -97,7 +98,7 @@ node install.mjs
 
 ### 怎么确认装好了
 
-重启后打开「插件 → 已安装插件」：应有 24 个插件，逐个点进去组件状态为「运行中」（dsh-orb 是 4 个组件全绿）；「实验性插件」里自动授权审查、会话搜索、插件市场三项应开启。
+重启后打开「插件 → 已安装插件」：应有 25 个插件，逐个点进去组件状态为「运行中」（dsh-orb 是 4 个组件全绿）；「实验性插件」里自动授权审查、会话搜索、插件市场三项应开启。
 
 功能上可快速看：
 
@@ -127,4 +128,4 @@ node install.mjs
 1. 仓库 `bigfatdsh/dsh-user-backup`（公开）。本机 `github.com` 不可直连，`api.github.com` 可用；走 API 取 `tarball`（公开仓库无需 token），或用 codeload。
 2. 解包后运行 `node install.mjs`。安装会写 `~/.dsh`，必须用完整文件权限（`danger-full-access` 或在系统终端执行）。
 3. 装完必须重启 DSH（profile 只在启动时装载）。
-4. 重启后按上面「怎么确认装好了」核对：24 个插件 + 4 个内置 bundle + compatibility 豁免，缺一项都不算完成。
+4. 重启后按上面「怎么确认装好了」核对：25 个插件 + 4 个内置 bundle + compatibility 豁免，缺一项都不算完成。
