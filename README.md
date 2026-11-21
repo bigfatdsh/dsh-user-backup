@@ -2,10 +2,10 @@
 
 DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**25 个插件（18 个仓库内 + 7 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 25 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
 
-- 快照时间：2026-11-21 18:25（UTC+8）
-- DSH 版本：0.2.2-rc.3 · macOS arm64 · Node 24
+- 快照时间：2026-11-21 18:16（UTC+8）
+- DSH 版本：0.2.2-rc.5 · macOS arm64 · Node 24
 - 备份时状态：25 个插件全部由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整；dsh-context 已生效（Context 标签页 / `/context`）；桌宠已接上「哔哔啵啵」语音（bibo/fish，voiceEnabled/voiceWhisperEnabled 已开）
-- 本版变更：**dsh-wpac 0.8.3 → 0.8.4**（dsh-go/Android 适配：自检与工具面同步认 `/opt/dsh` 引擎根、技能安装过滤 `._*`/`.DS_Store`、自检打印引擎根；无行为变更）；dsh-pet 0.4.9；重打 `plugins.tar.gz`
+- 本版变更：**dsh-wpac 0.8.3 → 0.8.4**（dsh-go/Android 适配：自检/工具面认 `/opt/dsh` 引擎根、技能安装过滤 `._*`/`.DS_Store`、自检打印引擎根；无行为变更）；**新增 dsh-pet-bibo-voice 0.1.0**（桌宠本地合成哔哔啵啵声）；dsh-pet 0.4.9；session-cost / tool-token-optimizer / exec-optimizer 等版本跟进；重打 `plugins.tar.gz`
 
 ## 包含的插件
 
@@ -14,9 +14,9 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 | 1 | dsh-whale-widget | 0.4.2 | npm | 右下角余额/用量小鲸鱼挂件 |
 | 2 | dsh-orb | 0.2.0 | npm | 桌面悬浮球 + Computer Use 预设 + 后台 code_agent |
 | 3 | dsh-univer-office | 0.3.7 | npm | Univer 文档/表格/幻灯片工具与实时预览 |
-| 4 | dsh-session-cost | 1.0.1 | 仓库内 | 本轮/本会话花费、缓存命中、峰谷价 |
-| 5 | dsh-tool-token-optimizer | 1.0.14 | 仓库内 | 工具结果落盘前压缩（默认 1600 字符内联预算） |
-| 6 | dsh-exec-optimizer | 1.0.0 | 仓库内 | 执行优化：并行/重试/截断/按需加载/防复读 |
+| 4 | dsh-session-cost | 1.1.0 | 仓库内 | 本轮/本会话花费、缓存命中、峰谷价 |
+| 5 | dsh-tool-token-optimizer | 1.0.16 | 仓库内 | 工具结果落盘前压缩（默认 1600 字符内联预算） |
+| 6 | dsh-exec-optimizer | 1.1.0 | 仓库内 | 执行优化：并行/重试/截断/按需加载/防复读 |
 | 7 | dsh-computer-use-turbo | 1.0.0 | 仓库内 | Computer Use 会话加速：截图去重、压缩策略段 |
 | 8 | dsh-optimizer | 4.8.0 | 仓库内 | 推理等级 auto、精简化输出、花费预警面板 |
 | 9 | dsh-univer-turbo | 1.0.10 | 仓库内 | Univer 调用提速降耗：单门面工具 + 结果压缩 + 批量 |
