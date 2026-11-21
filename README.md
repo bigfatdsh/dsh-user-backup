@@ -2,10 +2,10 @@
 
 DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快照：**25 个插件（18 个仓库内 + 7 个 npm）+ 4 个内置 bundle + 插件相关的 profile override（共 25 个非内置 bundle）**。装回这套配置只需一条命令；以后说「安装 GitHub 上的用户备份」，按本文件操作即可。
 
-- 快照时间：2026-11-21 18:16（UTC+8）
+- 快照时间：2026-11-21 18:23（UTC+8）
 - DSH 版本：0.2.2-rc.5 · macOS arm64 · Node 24
 - 备份时状态：25 个插件全部由当前 desktop profile 装载；bili-scroll 的 `bili_*` 工具已在会话里可用；2 个内置实验性插件已开启；大肥鱼（微信/QQ）链路完整；dsh-context 已生效（Context 标签页 / `/context`）；桌宠已接上「哔哔啵啵」语音（bibo/fish，voiceEnabled/voiceWhisperEnabled 已开）
-- 本版变更：**dsh-wpac 0.8.3 → 0.8.4**（dsh-go/Android 适配：自检/工具面认 `/opt/dsh` 引擎根、技能安装过滤 `._*`/`.DS_Store`、自检打印引擎根；无行为变更）；**新增 dsh-pet-bibo-voice 0.1.0**（桌宠本地合成哔哔啵啵声）；dsh-pet 0.4.9；session-cost / tool-token-optimizer / exec-optimizer 等版本跟进；重打 `plugins.tar.gz`
+- 本版变更：**dsh-wpac 0.8.3 → 0.8.4**（dsh-go/Android 适配：自检/工具面认 `/opt/dsh` 引擎根、技能安装过滤 `._*`/`.DS_Store`、自检打印引擎根；无行为变更）；**dsh-pet-bibo-voice 0.1.0 → 0.1.1**（新增合盖睡眠静音：睡觉期间不再合成可听语音，睡醒不会一起响）；dsh-pet 0.4.9；session-cost / tool-token-optimizer / exec-optimizer 等版本跟进；重打 `plugins.tar.gz`
 
 ## 包含的插件
 
