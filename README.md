@@ -35,7 +35,7 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 | 22 | dsh-wpac | 0.8.4 | 仓库内 | WPAC agent 预设：W/P/A/C 四要素先补全再交付，缺项带选项追问（作者姜涛） |
 | 23 | dsh-cookie-guard | 1.0.0 | 仓库内 | 清理登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开 |
 | 24 | dsh-context | 0.82.1 | npm | 上下文洞察：Context 标签页、`/context` 命令、上下文/Fleet 看板 |
-| 25 | dsh-pet-bibo-voice | 0.1.0 | 仓库内 | 桌宠语音：对话/碎碎念/带文字表情本地合成哔哔啵啵声（fish/lumo） |
+| 25 | dsh-pet-bibo-voice | 0.1.1 | 仓库内 | 桌宠语音：对话/碎碎念/带文字表情本地合成哔哔啵啵声（fish/lumo，含睡眠静音） |
 
 npm 的七个包按**精确版本**从 registry 安装；其余 18 个在 `plugins.tar.gz` 里，解包后以 `link:` 方式装进 profile。
 
