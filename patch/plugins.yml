@@ -77,3 +77,13 @@
       大肥鱼：53 分钟当资料查，别一口气看完。要换屏的先存着，本鱼帮你把参数那几段拎出来。
       有人回：你一条鱼懂什么
       大肥鱼：才不是大肥鱼！……好吧，是。压力一只蓝色大肥鱼有意思吗😤
+
+# [体检 2026-11-21] wechat-media-turbo 的补丁指向 preset id `whale-lean`，
+# 该预设已在 2026-10-29 的 FISH_DROP 清理里删除，id 悬空，实际一直回落到 standard。
+# 这里显式钉成 standard（与现状一致），去掉悬空引用。
+- id: wechat-media
+  name: dsh-wechat-media
+  config:
+    baseUrl: https://ilinkai.weixin.qq.com
+    botType: "3"
+    agentPreset: standard
