@@ -12,8 +12,8 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 | # | 插件 | 版本 | 来源 | 作用 |
 |---|---|---|---|---|
 | 1 | dsh-whale-widget | 0.4.2 | npm | 右下角余额/用量小鲸鱼挂件 |
-| 2 | dsh-orb | 0.2.0 | npm | 桌面悬浮球 + Computer Use 预设 + 后台 code_agent |
-| 3 | dsh-univer-office | 0.3.7 | npm | Univer 文档/表格/幻灯片工具与实时预览 |
+| 2 | dsh-orb | 0.2.1 | npm | 桌面悬浮球 + Computer Use 预设 + 后台 code_agent |
+| 3 | dsh-univer-office | 0.5.1 | npm | Univer 文档/表格/幻灯片工具与实时预览 |
 | 4 | dsh-session-cost | 1.1.0 | 仓库内 | 本轮/本会话花费、缓存命中、峰谷价 |
 | 5 | dsh-tool-token-optimizer | 1.0.16 | 仓库内 | 工具结果落盘前压缩（默认 1600 字符内联预算） |
 | 6 | dsh-exec-optimizer | 1.1.0 | 仓库内 | 执行优化：并行/重试/截断/按需加载/防复读 |
@@ -24,17 +24,17 @@ DeepSeek Harness 桌面版（desktop profile）当前全部插件的可还原快
 | 11 | dsh-wechat-media-turbo | 0.1.0 | 仓库内 | 微信精简 preset（鲸鱼娘·大肥鱼）：精简工具集与短回复 |
 | 12 | dsh-sd-bridge-mac | 1.0.0 | 仓库内 | SD 生图桥（macOS 原生）：A1111/Forge 文生图/图生图/蒙版重绘/模型清单/服务管理 |
 | 13 | dsh-sd-turbo | 1.0.0 | 仓库内 | SD 加速层：结果缓存、并发合并、串行队列、自动档位（8 步 / LCM 4 步）、重试 |
-| 14 | dsh-bili-scroll | 2.2.0 | npm | 每天刷一轮 B 站：读字幕挑值得的、写日报、值得的 @ 你 |
+| 14 | dsh-bili-scroll | 2.5.2 | npm | 每天刷一轮 B 站：读字幕挑值得的、写日报、值得的 @ 你 |
 | 15 | dsh-plugin-fast | 1.0.0 | 仓库内 | 装插件的快车道：一次调用完成安装、登记与体检 |
 | 16 | @alanzhao/dsh-memory-lite | 0.4.1-adapted.1 | 仓库内 | 轻量记忆：Markdown 记忆文件 + 目录索引（L0 上限 800 token） |
 | 17 | dsh-yishi-whale | 0.4.26-whale.1 | 仓库内 | 忆时适配版：跨会话增量记忆，只挂进 whale-lean 预设 |
-| 18 | dshmarket | 1.70.2 | npm | 可视化插件市场：浏览、搜索、一键装 |
+| 18 | dshmarket | 1.75.0 | npm | 可视化插件市场：浏览、搜索、一键装 |
 | 19 | dsh-pet | 0.4.9 | npm | 桌面宠物：动画、余额气泡、碎碎念 |
 | 20 | dsh-fish | 0.6.1 | 仓库内 | 大肥鱼本体：身份段、唤醒与成长账本、B站、桌面与记忆工具（含本地补丁） |
 | 21 | dsh-fish-memory | 0.1.0 | 仓库内 | 记忆库：微信/QQ/房间共享、随时间自然遗忘、聊天进她的账本、历史回填 |
 | 22 | dsh-wpac | 0.9.0 | 仓库内 | WPAC agent 预设：W/P/A/C 四要素先补全再交付，缺项带选项追问（作者姜涛） |
 | 23 | dsh-cookie-guard | 1.0.0 | 仓库内 | 清理登录 Cookie 累积，修复请求头超过 16KB 后 Web UI 永久打不开 |
-| 24 | dsh-context | 0.82.1 | npm | 上下文洞察：Context 标签页、`/context` 命令、上下文/Fleet 看板 |
+| 24 | dsh-context | 0.87.0 | npm | 上下文洞察：Context 标签页、`/context` 命令、上下文/Fleet 看板 |
 | 25 | dsh-pet-bibo-voice | 0.1.1 | 仓库内 | 桌宠语音：对话/碎碎念/带文字表情本地合成哔哔啵啵声（fish/lumo，含睡眠静音） |
 
 npm 的七个包按**精确版本**从 registry 安装；其余 18 个在 `plugins.tar.gz` 里，解包后以 `link:` 方式装进 profile。
